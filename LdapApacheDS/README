@@ -1,8 +1,35 @@
-http://directory.apache.org/apacheds/basic-user-guide.html
+# Notes from all of my research on LDAP.
 
-How to authenticate a user by uid and password?
-Link : http://directory.apache.org/apacheds/basic-ug/3.1-authentication-options.html
+1) You need to have basic understanding of LDAP Server and Why it is so popular.
+   Link : https://www.ldap.com/basic-ldap-concepts.
+   
+2) Software required to POC in local.
 
-If you want to use simple binds with user DN and password within a Java component, in order to authenticate users programatically, in practice one problem arises: Most users do not know their DN. Therefore they will not be able to enter it. And even if they know it, it would be frequently very laborious due to the length of the DN. It would be easier for a user if s/he only has to probvide a short, unique ID and the password, like in this web form
+	> apacheds-2.0.0-M23.exe   [ldap server]
+	> ApacheDirectoryStudio-2.0.0.v20161101-M12-win32.win32.x86_64.exe  [tool browse ldap server]
+	> start and stop the serbver using service from control panel > administool
+	
+3) Some more link to learn apacheDS.
 
-Confluence Logon
+	http://directory.apache.org/apacheds/basic-user-guide.html
+	https://directory.apache.org/studio/users-guide/ldap_browser/gettingstarted_create_connection.html
+	
+	Adding your own partition resp. suffix (dn: o=sevenSeas)
+	http://directory.apache.org/apacheds/basic-ug/1.4.3-adding-partition.html
+	
+4) LDAP connection url : ldap://localhost:10389
+	
+5) This project has few Java Client programme to
+	> test the connection from local server.
+	> to read the data.
+	> to authenticate the user id and password.
+	
+	If you want to use simple binds with user DN and password within a Java component, in order to authenticate users programatically, 
+	in practice one problem arises: Most users do not know their DN. Therefore they will not be able to enter it. 
+	And even if they know it, it would be frequently very laborious due to the length of the DN. It would be easier 
+	for a user if s/he only has to probvide a short, unique ID and the password, like in this web form
+
+
+	Ref Link : http://directory.apache.org/apacheds/basic-ug/3.1-authentication-options.html
+
+

@@ -34,19 +34,11 @@ import org.apache.directory.shared.ldap.name.LdapDN;
 
 
 /**
- * Ref : http://directory.apache.org/apacheds/basic-user-guide.html
- * 
- * https://directory.apache.org/studio/users-guide/ldap_browser/gettingstarted_create_connection.html
- * 
- * #!RESULT OK
-#!CONNECTION ldap://localhost:10389
-#!DATE 2017-03-06T21:22:09.050
  * 
  * A simple example exposing how to embed Apache Directory Server
  * into an application.
  *
- * @author <a href="mailto:dev@directory.apache.org">Apache Directory Project</a>
- * @version $Rev$, $Date$
+ * @author prakash pawar
  */
 public class EmbeddedADS
 {
@@ -55,7 +47,6 @@ public class EmbeddedADS
     
     /**
      * Main class. We just do a lookup on the server to check that it's available.
-     *
      * @param args Not used. 
      */
     public static void main( String[] args ) //throws Exception 
@@ -65,7 +56,7 @@ public class EmbeddedADS
             // Create the server
             EmbeddedADS ads = new EmbeddedADS();
             // Read an entry
-            Entry result = ads.service.getAdminSession().lookup( new LdapDN( "dc=apache,dc=org" ) );
+            Entry result = ads.service.getAdminSession().lookup( new LdapDN( "dc=foo,dc=com" ) );
             // And print it if available
             System.out.println( "Found entry : " + result );
         }

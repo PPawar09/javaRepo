@@ -12,15 +12,19 @@ import javax.naming.directory.SearchResult;
 
 public class LdapAuthentication {
 
+	/**
+	 * This will test authentication for userId and Password against the entries in LDAP Server
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
         Hashtable env = new Hashtable();
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
-        env.put(Context.PROVIDER_URL, "ldap://localhost:10389");
+        env.put(Context.PROVIDER_URL, "ldap://localhost:10389");  
         env.put(Context.SECURITY_AUTHENTICATION, "simple");
 
-        String uid = "hook";
-        String password = "petrPan";
+        String uid = "hook";   // attribute
+        String password = "petrPan"; // attribute
         DirContext ctx = null;
 
         try {            
@@ -28,7 +32,7 @@ public class LdapAuthentication {
             ctx = new InitialDirContext(env);
 
             // Step 2: Search the directory
-            String base = "o=sevenSeas";
+            String base = "o=sevenSeas";   // o=sevenseas is new partition 
             String filter = "(&(objectClass=inetOrgPerson)(uid={0}))";           
             SearchControls ctls = new SearchControls();
             ctls.setSearchScope(SearchControls.SUBTREE_SCOPE);
@@ -43,7 +47,6 @@ public class LdapAuthentication {
                 dn = result.getNameInNamespace();
                 System.out.println("dn: "+dn);
             }
-
             if (dn == null || enm.hasMore()) {
                 // uid not found or not unique
                 throw new NamingException("Authentication failed");

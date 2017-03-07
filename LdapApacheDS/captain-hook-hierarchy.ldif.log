@@ -1,0 +1,21 @@
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2017-03-06T17:11:14.837
+dn: ou=people,o=sevenSeas
+objectclass: organizationalUnit
+objectclass: top
+ou: people
+
+#!RESULT OK
+#!CONNECTION ldap://localhost:10389
+#!DATE 2017-03-06T17:11:16.026
+dn: cn=James Hook,ou=people,o=sevenSeas
+objectclass: inetOrgPerson
+objectclass: organizationalPerson
+objectclass: person
+objectclass: top
+cn: James Hook
+description: A pirate captain and Peter Pan's nemesis
+sn: Hook
+mail: jhook@neverland
+userpassword: peterPan

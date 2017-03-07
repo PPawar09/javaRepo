@@ -1,0 +1,8 @@
+http://directory.apache.org/apacheds/basic-user-guide.html
+
+How to authenticate a user by uid and password?
+Link : http://directory.apache.org/apacheds/basic-ug/3.1-authentication-options.html
+
+If you want to use simple binds with user DN and password within a Java component, in order to authenticate users programatically, in practice one problem arises: Most users do not know their DN. Therefore they will not be able to enter it. And even if they know it, it would be frequently very laborious due to the length of the DN. It would be easier for a user if s/he only has to probvide a short, unique ID and the password, like in this web form
+
+Confluence Logon

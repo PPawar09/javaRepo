@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.bo.Event" table="events">
+		<id name="id" column="id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="string" />
+		<property name="startDate" column="start_date" type="string" />
+		<property name="duration" type="integer" />
+		<many-to-one name="location" column="location_id" class="com.bo.Location" />
+	</class>
+</hibernate-mapping>

@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.sql.DataSource;
+
 
 /**
  * This is Java test client class for steps of database connectivity from Java Application.
@@ -48,7 +50,7 @@ public class JDBCSteps {
 			String selectSQL = "SELECT * FROM DBO.EMPLOYEE WHERE EMP_ID = ?";
 			PreparedStatement  preparedStmnt = con.prepareStatement(selectSQL);
 			preparedStmnt.setInt(1,14252);
-			ResultSet rs = preparedStmnt.executeQuery(selectSQL);
+			ResultSet rs = preparedStmnt.executeQuery();
 			
 			// read the data from table.
 			while(rs.next()){  
@@ -60,7 +62,7 @@ public class JDBCSteps {
 			
 		}catch(Exception e){
 			// instead of using printStack Trace this utility format the message
-			logger.log(Level.INFO,"Exception|Class=JDBCSteps " + ExceptionFormatUtil.getMessage(e.getMessage()));
+			logger.log(Level.INFO,"Exception|Class=JDBCSteps ",e);
 		}
 	}
 	
@@ -93,6 +95,18 @@ public class JDBCSteps {
 		//Step2 create DB Connection.
 		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
 		return con;
+	}
+	
+	
+	/**
+	 * This method connect to MS Sql Server Using Datasource and return connection object
+	 * @return
+	 * @throws Exception
+	 */
+	public Connection getConByDataSource() throws Exception{
+		MyDataSourceFactory mdf = new MyDataSourceFactory();
+		DataSource ds = mdf.getMySQLDataSource();
+		return ds.getConnection();
 	}
 
 }

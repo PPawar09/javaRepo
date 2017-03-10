@@ -1,40 +1,51 @@
 package com.pp.apachexmlbean;
 
 import java.io.File;
+
+import noNamespace.Person;
 import noNamespace.PersonGroupDocument;
+
 import org.apache.xmlbeans.XmlCursor;
 
-//Ref Link http://www.dreamincode.net/forums/topic/45313-reading-xml-using-xmlbeans/
-
-// need to do this one 
-// https://www.javacodegeeks.com/2012/07/approaches-to-xml-part-4-xmlbeans.html
-
-//http://xmlbeans.apache.org/docs/2.0.0/guide/conGettingStartedwithXMLBeans.html
-
-//https://xmlbeans.apache.org/docs/2.0.0/guide/tools.html#scomp
-
-// Tutorial: First Steps with XMLBeans : http://xmlbeans.apache.org/documentation/tutorial_getstarted.html
-
-// to generate jar based on the schema this jar will be used to read xml data in java client
-// scomp -out C:\xmlbeans-2.6.0\demo\lib\easypo.jar C:\xmlbeans-2.6.0\schemas\easypo.xsd
-
+/**
+ * Simple example using xml bean
+ * Here we will be using XMLBeans to parse and then read its contents. As an example consider a person database.
+ * We will have a person group which will contain many persons and each person has a name and age. The XML 
+ * representing this structure in person.xml
+ * 
+ * A XSD (XML Schema Diagram) is a general representation of the XML file. The XSD representing the above XML 
+ * is person.xsd
+ * 
+ * XMLBeans will work on our person.xsd to generate Java Beans using which we can read/write XML.
+ * 
+ * XMLBean setup is mentioned in README.
+ * 
+ * Command to generate Java Bean using schema compiler 
+ * E:\scomp –out e:\person.jar –compiler c:\j2sdk\bin\javac e:\person.xsd
+ * 
+ * Note: scomp is a tool available in XMLBeans’ bin folder.
+ * The above command will generate person.jar.
+ * 
+ * @author Prakash Pawar
+ */
 public class XmlBeanTest {
 
 	public static void main(String args[]) {
-        XmlCursor cursor = null;
-        try {
-            String filePath = "C:\\person.xml";
-            File inputXMLFile = new File(filePath);
-            PersonGroupDocument persGrpDoc = PersonGroupDocument.Factory.parse(inputXMLFile);
-            PersonGroupDocument.PersonGroup prsGrp = persGrpDoc.getPersonGroup();
-            cursor = prsGrp.newCursor();
-            System.out.println(cursor.getTextValue());
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            cursor.dispose();
-        }
-    }
+		XmlCursor cursor = null;
+		try {
+			String filePath = "C:\\person.xml"; // this xml contain group of person with name and age elements.
+			File inputXMLFile = new File(filePath);
+			PersonGroupDocument persGrpDoc = PersonGroupDocument.Factory.parse(inputXMLFile);
+			PersonGroupDocument.PersonGroup prsGrp = persGrpDoc.getPersonGroup();
+			Person person = prsGrp.getPerson();
+			cursor = prsGrp.newCursor();
+			System.out.println(cursor.getTextValue());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			cursor.dispose();
+		}
+	}
 }
 
 /*
@@ -48,9 +59,7 @@ public class XmlBeanTest {
 	5) Now we need to iterate the cursor to print the value of each node. But fortunately we don’t need to do so. 
 	   The getTextValue() method of the XMLCursor does the job for us and we put the result of this method in println() method.
 	
-	The advatages of XMLBeans over DOM/SAX parsers are:
-	1) DOM parsers create an instance of whole of the document in one go which may eat up memory if document is large. XMLBeans does incremental unmarshalling of XML and hence uses memory only when required.
-	2) SAX parsers can’t write to XML and moreover the developer needs to write event handlers.
+
  * 
  */
 

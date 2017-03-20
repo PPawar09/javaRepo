@@ -1,6 +1,11 @@
-package com.pp.corejava;
+package com.pp.util;
 
 import java.text.MessageFormat;
+
+/**
+ * This is utility class to format the Exception Message instead of printStack trace via different operation
+ * @author Prakash Pawar
+ */
 
 public class ExceptionFormatUtil {
 	

@@ -3,7 +3,6 @@ package com.pp.corejava;
 public class Assertion {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// Enable assertion with VM arg ad -ea
 		int x = 5;
 		
@@ -20,6 +19,6 @@ public class Assertion {
 		// if this test isn't true
 		int z = (num + 5);
 		System.out.println(z);
-		}
+	}
 
 }

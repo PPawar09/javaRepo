@@ -1,21 +1,32 @@
 package com.pp.corejava;
 
+/**
+ * This class uses equal method for custom object like Employee.
+ * it is achieved by overriding equal() and hashCode() method.
+ * 
+ * 	> equal() compare values and '==' compare the reference.
+ * 
+ * @author Prakash Pawar
+ */
+
 public class EqualTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Employee emp1 = new Employee();
 		emp1.setName("Prakash");
-		
 		Employee emp2 = new Employee();
 		emp2.setName("Prakash");
-		
-		System.out.println("*****Test Eqaul******" + emp1.equals(emp2)); 
-		// equal compare values and == compare the reference
 
+		System.out.println("*****Test Eqaul******" + emp1.equals(emp2)); 
 	}
 
 }
+
+/**
+ * Custom class with min attribute to compare.
+ *
+ */
 
 class Employee{
 	String name = null;

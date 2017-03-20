@@ -3,8 +3,6 @@ package com.pp.corejava;
 public class Polymorphism {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
 		Animal an1 = new Dog();
 		Animal an2 = new Cat();
 		

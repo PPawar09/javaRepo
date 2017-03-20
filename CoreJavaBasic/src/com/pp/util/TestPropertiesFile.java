@@ -1,4 +1,4 @@
-package com.pp.corejava;
+package com.pp.util;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,21 +7,21 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
+/**
+ * This is utility class to read and write into properties files using Properties API.
+ * @author vishakha
+ *
+ */
 public class TestPropertiesFile {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
 
 		OutputStream output = null;
-
 		try {
 			output = new FileOutputStream("config.properties");
 			TestPropertiesFile tpf = new TestPropertiesFile();
 			tpf.writePropfile(output);
 			tpf.readPropfile();
-
-
 		} catch (IOException io) {
 			io.printStackTrace();
 		} finally {

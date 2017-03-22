@@ -1,3 +1,21 @@
-http://localhost:8161/admin
+1) What is ActiveMQ.  help : http://activemq.apache.org/getting-started.html
 
-help : http://activemq.apache.org/getting-started.html
+
+2) Running an ActiveMQ Broker : http://activemq.apache.org/version-5-run-broker.html
+   
+   > Starting broker from console : bin/activemq console
+     CD  C:\apache-activemq-5.14.4\bin\win32>activemq
+     
+     Log if started successfully.
+     jvm 1    |  INFO | Apache ActiveMQ 5.14.4 (localhost, ID:Prakash-61556-1490142942037-0:1) started
+     jvm 1    |  INFO | For help or more information please see: http://activemq.apache.org
+     jvm 1    |  INFO | No Spring WebApplicationInitializer types detected on classpath
+     jvm 1    |  INFO | ActiveMQ WebConsole available at http://0.0.0.0:8161/
+     jvm 1    |  INFO | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/
+     
+     admin console : http://localhost:8161/admin     admin/admin
+     
+   > Stopping Broker : cd [activemq_install_dir]/bin./activemq stop
+     
+   > Command Line Tools : http://activemq.apache.org/activemq-command-line-tools-reference.html
+

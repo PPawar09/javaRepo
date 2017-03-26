@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="HelloWorldEjb">
+        <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
+        <property name="java-output-path" value="/HelloWorldEjb/build/classes"/>
+        <property name="ClientProject" value="HelloWorldEjbClient"/>
+        <property name="ClientJARURI" value="HelloWorldEjbClient.jar"/>
+    </wb-module>
+</project-modules>

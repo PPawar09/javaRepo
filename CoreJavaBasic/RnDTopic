@@ -8,3 +8,10 @@ Java Topic Link :
 2) annotations basics and example  Done
 3) Reflection bascis and example   Done
 4) example     int n = 2 * ++i;  i *= 2;
+5) Design Pattern in java
+   		> SingleTon
+   		> Factory 
+   		> AbstractFatcory
+   		> 
+   		
+6) EJB tutorial https://www.javacodegeeks.com/2013/08/java-ee-stateful-session-bean-ejb-example.html

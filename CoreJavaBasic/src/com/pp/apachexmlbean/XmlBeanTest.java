@@ -20,8 +20,12 @@ import org.apache.xmlbeans.XmlCursor;
  * 
  * XMLBean setup is mentioned in README.
  * 
+ * detailed steps to genearte jar using Scomp : http://xmlbeans.apache.org/documentation/tutorial_getstarted.html
+ * 
  * Command to generate Java Bean using schema compiler 
  * E:\scomp –out e:\person.jar –compiler c:\j2sdk\bin\javac e:\person.xsd
+ * 
+ * scomp -out tutorials\gettingstarted\lib\easypo.jar schemas\easypo\easypo.xsd
  * 
  * Note: scomp is a tool available in XMLBeans’ bin folder.
  * The above command will generate person.jar.

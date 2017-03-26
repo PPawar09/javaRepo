@@ -27,8 +27,6 @@ public class ReadXml {
 	public static void main(String[] args)
 	{
 		File poXmlFile = new File(args[0]);
-		/*String updatedPoXml = addLineItem(poXmlFile, args[1], args[2],
-				args[3], args[4]);*/
 		String updatedPoXml = addLineItemWithCursor(poXmlFile, args[1], args[2],
 				args[3], args[4]);
 		System.out.println(updatedPoXml);

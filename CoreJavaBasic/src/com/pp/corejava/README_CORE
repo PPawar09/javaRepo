@@ -1,0 +1,7 @@
+1) Operator 
+     
+    post increment : i++ is nothing but post increment which means CPU executes some instruction 
+                     (depends on the program you are in) before it increments i.
+                     
+    pre-increment  : ++i is pre-increment which means before the CPU executes some instruction 
+                     (depends on the program you are in) it increments it first and then executes it

@@ -1,0 +1,6 @@
+1) configure SQL Server JNDI on glassfish : http://www.javaxt.com/Tutorials/Glassfish/How_to_set_up_a_Connection_Pool
+
+
+http://localhost:8080/HelloWebApp/ShoppingCartServlet?checkout=yes
+
+http://localhost:8080/HelloWebApp/ShoppingCartServlet?product=Honno

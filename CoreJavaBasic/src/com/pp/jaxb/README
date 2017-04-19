@@ -1,0 +1,18 @@
+1) JAXB VS XML Bean : http://stackoverflow.com/questions/1362030/jaxb-vs-apache-xmlbeans
+
+2) Link : https://www.mkyong.com/java/jaxb-hello-world-example/
+  
+   tutorial link : https://jaxb.java.net/tutorial/
+
+   JAXB, stands for Java Architecture for XML Binding, using JAXB annotation to convert 
+   Java object to / from XML file. In this tutorial, we show you how to use JAXB to do following stuffs :
+
+		Marshalling – Convert a Java object into a XML file.
+		Unmarshalling – Convert XML content into a Java Object.
+		Technologies used in this article
+
+		JDK 1.6
+		JAXB 2.0
+
+   Working with JAXB is easy, just annotate object with JAXB annotation, later use jaxbMarshaller.marshal() or 
+   jaxbMarshaller.unmarshal() to do the object / XML conversion.

@@ -5,15 +5,17 @@ Java Topic Link :
     > Java tutorial : http://tutorials.jenkov.com/java/annotations.html
  
 1) OAuth POC  : Done
-2) annotations basics and example  Done
-3) Reflection bascis and example   Done
-4) example     int n = 2 * ++i;  i *= 2;
-5) Design Pattern in java
+2) annotations basics and example :  Done
+3) Reflection bascis and example :   Done
+4) Design Pattern in java
    		> SingleTon
    		> Factory 
    		> AbstractFatcory
    		> 
    		
-6) EJB tutorial https://www.javacodegeeks.com/2013/08/java-ee-stateful-session-bean-ejb-example.html
+5) EJB : Done
 
-7) Random number generator like Quote Number Util
+6) Random number generator like Quote Number Util
+
+jndi on java main client
+http://penguindreams.org/blog/running-beans-that-use-application-server-datasources-locally/

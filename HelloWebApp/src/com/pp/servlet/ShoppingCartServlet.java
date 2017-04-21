@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.pp.bean.Cart;
 import com.pp.bean.Product;
+import com.pp.helper.DbHelper;
 
 @WebServlet("/ShoppingCartServlet")
 public class ShoppingCartServlet extends HttpServlet {
@@ -27,6 +28,8 @@ public class ShoppingCartServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		System.out.println("Hello from servlet");
+		DbHelper dbh = new DbHelper();
+		dbh.getCon();
 
 		Cart cartBean = (Cart) request.getSession().getAttribute(CART_SESSION_KEY);
 

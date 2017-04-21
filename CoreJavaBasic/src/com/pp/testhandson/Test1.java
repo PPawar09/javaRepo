@@ -9,34 +9,72 @@ public class Test1 {
 
 	public static void main(String[] args) {
 			
-			Integer []array = {12,232,434,45,42,535};
+		Test1 obj = new Test1();
+		obj.reversArray();
 			
-			//Using Collection utility api
-			List<Integer> lstInt = Arrays.asList(array);
-			System.out.println("**Before**"+lstInt);
-			java.util.Collections.shuffle(lstInt);
-			System.out.println("**After**"+lstInt);
-			
-			Collections.sort(lstInt);
-			System.out.println("**After Sort**"+lstInt);
-			
-			//Using coding
-			Random rgen = new Random();  // Random number generator	
-			
-			System.out.print("**Before**");
-			for(int s : array){
-				System.out.print(s+",");
-			}
-			for (int i=0; i<array.length; i++) {
-			    int randomPosition = rgen.nextInt(array.length);
-			    int temp = array[i];
-			    array[i] = array[randomPosition];
-			    array[randomPosition] = temp;
-			}
-			System.out.println("**After**");
-			for(int s : array){
-				System.out.print(s+",");
-			}
 	}
-
+	
+	public void reversArray(){
+		Integer []array = {12,232,434,45,42,535,700};
+		
+		//Option1 via basic code		
+		for (int k = 0; k < array.length/2; k++) {
+		    int temp = array[k];
+		    array[k] = array[array.length-(1+k)];
+		    array[array.length-(1+k)] = temp;
+		}
+		System.out.println("**Reverse Array**");
+		for(int x=0;x<array.length;x++){
+			System.out.println(array[x]);
+		}
+		
+		//Option2 via Collections Util
+		List lst = Arrays.asList(array);
+		Collections.reverse(lst);
+		array = (Integer[])lst.toArray();
+		
+		System.out.println("**Reverse Array**");
+		for(int x=0;x<array.length;x++){
+			System.out.println(array[x]);
+		}
+		
+	}
+	
+	//Randomize the data in array.
+	public void randomArray(){
+	
+		Integer []array = {12,232,434,45,42,535};
+		
+		//Using Collection utility api
+		//Option 1 Using Collection utility api
+		List<Integer> lstInt = Arrays.asList(array);
+		System.out.println("**Before**"+lstInt);
+		java.util.Collections.shuffle(lstInt);
+		System.out.println("**After**"+lstInt);
+		
+		Collections.sort(lstInt);
+		System.out.println("**After Sort**"+lstInt);
+		
+		//Using coding
+		//Option 2 Using coding
+		Random rgen = new Random();  // Random number generator	
+		
+		System.out.print("**Before**");
+		for(int s : array){
+			System.out.print(s+",");
+		}
+		for (int i=0; i<array.length; i++) {
+			//this will generate random number between the number passed as arg.
+		    int randomPosition = rgen.nextInt(array.length);
+		    int temp = array[i];
+		    array[i] = array[randomPosition];
+		    System.out.println("**** Random Pos "+randomPosition);
+		    array[randomPosition] = temp;
+		}
+		System.out.println("**After**");
+		for(int s : array){
+			System.out.print(s+",");
+		}
+	}
 }
+

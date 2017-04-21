@@ -1,6 +1,14 @@
-1) configure SQL Server JNDI on glassfish : http://www.javaxt.com/Tutorials/Glassfish/How_to_set_up_a_Connection_Pool
+This Project is hello world example of EJB3. it is deployed on glassfish server 4.1.2
+
+Reference Link :
+
+  > EJB tutorial https://www.javacodegeeks.com/2013/08/java-ee-stateful-session-bean-ejb-example.html
+ 
+  > configure SQL Server JNDI on glassfish : 
+                   http://www.javaxt.com/Tutorials/Glassfish/How_to_set_up_a_Connection_Pool
+  
+  > test link for statefull session bean.
+  		http://localhost:8080/HelloWebApp/ShoppingCartServlet?checkout=yes
+        http://localhost:8080/HelloWebApp/ShoppingCartServlet?product=Honno
 
 
-http://localhost:8080/HelloWebApp/ShoppingCartServlet?checkout=yes
-
-http://localhost:8080/HelloWebApp/ShoppingCartServlet?product=Honno

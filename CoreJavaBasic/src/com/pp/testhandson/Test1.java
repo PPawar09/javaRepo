@@ -10,8 +10,39 @@ public class Test1 {
 	public static void main(String[] args) {
 			
 		Test1 obj = new Test1();
-		obj.reversArray();
+		//obj.reversArray();
+		obj.removeDuplicate();
 			
+	}
+	
+	//Remove duplicate element from array
+	public void removeDuplicate(){
+		Integer []arr = {12,232,12,45,42,45,700};
+		int end = arr.length;
+
+	    for (int i = 0; i < end; i++) {
+	        for (int j = i + 1; j < end; j++) {
+	            if (arr[i] == arr[j]) {                  
+	                int shiftLeft = j;
+	                for (int k = j+1; k < end; k++, shiftLeft++) {
+	                    arr[shiftLeft] = arr[k];
+	                }
+	                end--;
+	                j--;
+	            }
+	        }
+	    }
+
+	    int[] whitelist = new int[end];
+	    for(int i = 0; i < end; i++){
+	        whitelist[i] = arr[i];
+	    }
+	    
+	    for(int j=0;j<whitelist.length;j++){
+	    	System.out.print(","+whitelist[j]);
+	    }
+	
+	
 	}
 	
 	public void reversArray(){

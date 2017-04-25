@@ -7,7 +7,7 @@ Java Topic Link :
 1) OAuth POC  : Done
 2) annotations basics and example :  Done
 3) Reflection bascis and example :   Done
-4) Design Pattern in java
+4) Design Pattern in java        : In progress
    		> SingleTon
    		> Factory 
    		> AbstractFatcory
@@ -15,7 +15,10 @@ Java Topic Link :
    		
 5) EJB : Done
 
-6) Random number generator like Quote Number Util
+6) Random number generator like Quote Number Util : Done
 
-jndi on java main client
-http://penguindreams.org/blog/running-beans-that-use-application-server-datasources-locally/
+7) jndi on java main client : http://penguindreams.org/blog/running-beans-that-use-application-server-datasources-locally/
+
+8) Local Common JCF Jar : Ant build : Not Started.
+
+9) Junit

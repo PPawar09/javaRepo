@@ -63,7 +63,7 @@ public class CollectionBasics {
 		}
 		
 		//convert List into Array.
-		String[] abc = (String[])strLst.toArray();
+	    String[] abc = strLst.toArray(new String[0]);
 		
 		//convert array into List
 		List abcList = Arrays.asList(abc);
@@ -80,6 +80,10 @@ public class CollectionBasics {
 		emp.put("1", "abc");
 		emp.put("2", "abc");
 		emp.put("3", "abc");
+		emp.put("3", "abccc"); // Map allow same again and again but it just keep the latest one.
+		emp.put(null,"abs");
+		emp.put(null,"abs"); // Map allow null as key and also more than one but it store only one key in Map.
+		
 
 		//logic to iterate whole Map
 		Iterator itr = emp.entrySet().iterator();

@@ -1,7 +1,10 @@
 package com.pp.jaxb;
 
+import java.io.ByteArrayInputStream;
 import java.io.StringReader;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
@@ -34,8 +37,10 @@ public class XmlXpathExmple {
 			String xml = "<resp><status>good</status><msg>hi</msg></resp>";
 			XPathFactory xpathFactory = XPathFactory.newInstance();
 			XPath xpath = xpathFactory.newXPath();
-			InputSource source = new InputSource(new StringReader(xml));
-			Document doc = (Document) xpath.evaluate("/", source, XPathConstants.NODE);
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder;
+			builder = factory.newDocumentBuilder();
+			Document doc = builder.parse(new ByteArrayInputStream(xml.getBytes()));
 			String status = xpath.evaluate("/resp/status", doc);
 			String msg = xpath.evaluate("/resp/msg", doc);
 			System.out.println("status=" + status);

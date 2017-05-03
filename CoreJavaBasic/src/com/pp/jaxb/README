@@ -1,5 +1,16 @@
 1) JAXB VS XML Bean : http://stackoverflow.com/questions/1362030/jaxb-vs-apache-xmlbeans
 					: https://jaxb.java.net/tutorial/
+   
+   There are several way to work with Jaxb for xml binding or processing xml data.
+   
+   a) Xml with no schema : generate xsd from xml online, once you have xsd generate jaxb xml mapping java class
+    					   using IDE right click on xsd and then generate JAXB class.
+    					   Once you have JAXB class you can use regular logic to read xml info java obj or Java Object to xml.
+    					   
+   b) Xml with xsd : In this step no need to generate xsd from online.
+   
+   c) Online xsd generation : 	http://www.freeformatter.com/xsd-generator.html#ad-output				
+   
 
 2) Link : https://www.mkyong.com/java/jaxb-hello-world-example/
   
@@ -22,9 +33,6 @@
    You can have a compliant xml without an xsd (in which case the xsd is hidden). While it is true that we start 
    with xsd and generate java objects for the most part, you can do things the other way around as well.
    
-4) How to read XML using XPath in Java : http://stackoverflow.com/questions/2811001/how-to-read-xml-using-xpath-in-java
-   http://stackoverflow.com/questions/34432343/what-is-a-good-approach-to-verify-xml-response-from-restful-service-in-java
    
-   
-   http://stackoverflow.com/questions/13589942/creating-jaxb-classes-from-xml-without-schema
+ 
  

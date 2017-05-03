@@ -1,9 +1,12 @@
 package com.pp.jaxb;
 
 import java.io.File;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+
+import com.pp.jaxb.xmlMapping.Customer;
 
 /**
  * Convert Object to XML

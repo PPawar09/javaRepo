@@ -1,4 +1,4 @@
-package com.pp.jaxb;
+package com.pp.jaxb.xmlMapping;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

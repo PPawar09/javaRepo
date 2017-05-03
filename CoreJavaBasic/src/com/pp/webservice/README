@@ -22,6 +22,7 @@
    
  2) What is a good approach to verify XML response from RESTful service in Java?
 
+	Approach to handle JSON and xml Response is below link
     http://stackoverflow.com/questions/34432343/what-is-a-good-approach-to-verify-xml-response-from-restful-service-in-java
     
     

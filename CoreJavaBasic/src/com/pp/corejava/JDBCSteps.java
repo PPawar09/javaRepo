@@ -19,9 +19,10 @@ import javax.sql.DataSource;
  * High Level Steps for JDBC Connection are 
  * step1 register or load the driver based on the DB : Object obj = Class.forName("oracle.jdbc.driver.OracleDriver");
  * Step2 create DB Connection. : DriverManager.getConnection(url);
- * Step3 create Statement from connection.
- * Step4 execute query from Statement.
- * Step5 Process the ResultSet.
+ * Step3 create Statement from connection : preparedStatement = con.prepareStatement("Query");
+ * Step4 execute query from Statement : ResultSet rs = preparedStmnt.executeQuery();
+ * Step5 Process the ResultSet : while(rs.next()){...}
+ * Step6 connection close.
  *
  * @author  Prakash Pawar
  */

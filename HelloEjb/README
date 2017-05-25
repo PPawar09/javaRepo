@@ -10,5 +10,14 @@ Reference Link :
   > test link for statefull session bean.
   		http://localhost:8080/HelloWebApp/ShoppingCartServlet?checkout=yes
         http://localhost:8080/HelloWebApp/ShoppingCartServlet?product=Honno
+        
+ 1) Tip: If you are having trouble figuring out the Portable JNDI names for EJB PassivationObject 
+    look at the logs or output of Glassfish when deploying the project and you will find a line like 
+    this :2013-12-13T18:22:28.598+0200|INFO: EJB5181:Portable JNDI names for EJB PassivationObject: 
+    (java:global/StatefulBeans/StatefulEJB/PassivationObject, java:global/StatefulBeans/StatefulEJB/PassivationObject!com.javacodegeeks.enterprise.ejb.Passivation)
+    
+ 2) The EJB framework uses the Java RMI API to define and provide access to EJBs.The EJBHome and EJBObject interfaces, 
+    which are both required when creating EJBs, are extended from the java.rmi.Remote interface.
+    
 
 

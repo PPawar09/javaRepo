@@ -80,7 +80,7 @@ public class CollectionBasics {
 		emp.put("1", "abc");
 		emp.put("2", "abc");
 		emp.put("3", "abc");
-		emp.put("3", "abccc"); // Map allow same again and again but it just keep the latest one.
+		emp.put("3", "abccc"); // Map allow same key again and again but it just keep the latest one.
 		emp.put(null,"abs");
 		emp.put(null,"abs"); // Map allow null as key and also more than one but it store only one key in Map.
 		

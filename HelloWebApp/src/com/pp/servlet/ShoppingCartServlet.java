@@ -39,6 +39,9 @@ public class ShoppingCartServlet extends HttpServlet {
 			  // We obtain a CartBean instance and add it to the session object.
 		      try {
 		        InitialContext ic = new InitialContext();
+		        //when glassfish server start, EJB container load all ejb and create jndi for lookup.
+		        //Name of the lookup can be obtained from the log
+		        
 		        cartBean = (Cart)ic.lookup("java:global/HelloWorldEar/HelloEjb/CartBean");
 
 		        request.getSession().setAttribute(CART_SESSION_KEY, cartBean);

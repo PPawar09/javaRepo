@@ -1,9 +1,12 @@
 package com.pp.testhandson;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class Test1 {
 
@@ -11,12 +14,13 @@ public class Test1 {
 			
 		Test1 obj = new Test1();
 		//obj.reversArray();
-		obj.removeDuplicate();
+		//obj.removeDuplicateArray();
+		obj.removeDupEleList();
 			
 	}
 	
 	//Remove duplicate element from array
-	public void removeDuplicate(){
+	public void removeDuplicateArray(){
 		Integer []arr = {12,232,12,45,42,45,700};
 		int end = arr.length;
 
@@ -107,5 +111,34 @@ public class Test1 {
 			System.out.print(s+",");
 		}
 	}
+	
+    public void removeDupEleList(){
+		List<String> data = new ArrayList<String>();
+		data.add("pi");
+		data.add("pz");
+		data.add("pp");
+		data.add("pk");
+		data.add("pp");
+		data.add("pp");
+		data.add("pp");
+		
+		
+	/*	//Option1 via basic code		
+		for (int i=0;i<data.size();i++){
+			String temp = data.get(i);
+			for(int j=i+1;j<data.size();j++){
+				if(temp.equals(data.get(j))){
+					data.remove(j);
+				}
+			}
+		}*/
+		
+		System.out.println("*******" + data.size());
+		
+		Set<String> dataSet = new HashSet<String>(data);
+		System.out.println("****Set***" + dataSet.size());
+		
+	}
+	
 }
 

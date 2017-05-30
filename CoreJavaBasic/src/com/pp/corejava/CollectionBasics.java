@@ -13,28 +13,28 @@ import java.util.Set;
 public class CollectionBasics {
 
 	public static void main(String[] args) {
-		
-		CollectionBasics cb = new CollectionBasics();
-		
+
 		// Most commonly used collection are List,Map,Set (ArrayList,HashMap,HashSet)
 		// Collection Utility API is Collections and Arrays can be used for conversion or sorting.
+		// Convert List to Set : Set<String> dataSet = new HashSet<String>(list);
+		// Convert Set to List : List<String> lst = new ArrayList<String>(dataSet);
 		
+		CollectionBasics cb = new CollectionBasics();
 		cb.playList(); // ArrayList Example code
 		cb.playMap();  // HashMap Example code
 		cb.playSet();  // HashSet Example code
-		
+
 		//Sorting List using util Collections and Arrays
 		cb.SortingCollections();
-		
 		//custom object sorting by implementing compareTo of Interface Comaparable
 		cb.testSortStudent(); 
 	}
-	
+
 	/**
 	 * This method uses List and its operation
 	 */
 	public void playList(){
-		
+
 		List<String> strLst = new ArrayList<String>();
 		strLst.add("Praash");
 		strLst.add("Prakash");
@@ -43,47 +43,50 @@ public class CollectionBasics {
 		strLst.add("Prakash");
 
 		System.out.println("*****Actual Size of List **** " + strLst.size());
-
-		// delete item from list, iterator is the best option to avoid runtime Exception.
+		// delete item from list, iterator and for loop is the best option to avoid runtime Exception.
 		// below is the example Iterator#remove()
+		
 		Iterator<String> itr = strLst.iterator();
-
 		while(itr.hasNext()){
 			String s = itr.next();
 			if(s == "Praash" ){
 				itr.remove();
 			}
 		}
+		// Or
+		for(int i = 0;i<strLst.size();i++){
+			if(strLst.get(i).equals("Praash")){
+				strLst.remove(i);
+			}
+		}
 
-		//Traversing List using for each loop.
+		//Traversing List using for each loop will not work.
 		for(String s: strLst){
 			if(s.equals("Praash")){
 				strLst.remove(s);  // This will throw Exception.
 			}
 		}
-		
+
 		//convert List into Array.
-	    String[] abc = strLst.toArray(new String[0]);
-		
+		String[] abc = strLst.toArray(new String[0]);
+
 		//convert array into List
 		List abcList = Arrays.asList(abc);
-		
 		System.out.println("*****Size After **** " + strLst.size());
 	}
-	
+
 	/**
 	 * This method uses Map and its operation
 	 */
 	public void playMap(){
-		
+
 		Map<String,String> emp = new HashMap<String,String>();
 		emp.put("1", "abc");
 		emp.put("2", "abc");
 		emp.put("3", "abc");
 		emp.put("3", "abccc"); // Map allow same key again and again but it just keep the latest one.
 		emp.put(null,"abs");
-		emp.put(null,"abs"); // Map allow null as key and also more than one but it store only one key in Map.
-		
+		emp.put(null,"abs");   // Map allow null as key and also more than one but it store only one key in Map.
 
 		//logic to iterate whole Map
 		Iterator itr = emp.entrySet().iterator();
@@ -96,12 +99,12 @@ public class CollectionBasics {
 		for (String key : emp.keySet()) {
 			System.out.println("****Map Key******" + key +"\n");
 		}
-		
+
 		//If you're only interested in the Values of Map
 		for (String value : emp.values()) {
 			System.out.println("****Map Values******" + value +"\n");
 		}
-		
+
 		//delete item from Map
 		Iterator itr1 = emp.entrySet().iterator();
 		while(itr.hasNext()){
@@ -111,7 +114,7 @@ public class CollectionBasics {
 			}
 		}
 	}
-	
+
 	/**
 	 * This method uses Set and its operation
 	 */
@@ -136,24 +139,24 @@ public class CollectionBasics {
 			}
 		}
 	}
-	
+
 	/**
-	  * Sorting List using util API Collections and Arrays
-	  *
-	  * Below example used String list to sort and String has already inbuilt implementation of Interface Comaparable 
-	  * 
-	  * What about custom object
-	  * If you've already figured out the problem, our guess is that you did it without
-	  *	the help of the obscure error message shown above…How the heck do you sort
-	  * instances of DVDInfo? Why were we able to sort instances of String? When you
-	  * look up Collections.sort() in the API your first reaction might be to panic.
-	  * Hang tight, once again the generics section will help you read that weird looking
-	  *	method signature. If you read the description of the one-arg sort() method,
-	  * you'll see that the sort() method takes a List argument, and that the objects in
-	  * the List must implement an interface called Comparable. It turns out that String
-	  * implements Comparable, and that's why we were able to sort a list of Strings using
-	  * the Collections.sort() method */
-	
+	 * Sorting List using util API Collections and Arrays
+	 *
+	 * Below example used String list to sort and String has already inbuilt implementation of Interface Comaparable 
+	 * 
+	 * What about custom object
+	 * If you've already figured out the problem, our guess is that you did it without
+	 *	the help of the obscure error message shown above…How the heck do you sort
+	 * instances of DVDInfo? Why were we able to sort instances of String? When you
+	 * look up Collections.sort() in the API your first reaction might be to panic.
+	 * Hang tight, once again the generics section will help you read that weird looking
+	 *	method signature. If you read the description of the one-arg sort() method,
+	 * you'll see that the sort() method takes a List argument, and that the objects in
+	 * the List must implement an interface called Comparable. It turns out that String
+	 * implements Comparable, and that's why we were able to sort a list of Strings using
+	 * the Collections.sort() method */
+
 	public void SortingCollections(){
 
 		ArrayList<String> lstString = new ArrayList<String>();
@@ -162,33 +165,33 @@ public class CollectionBasics {
 		lstString.add("Vail");
 		lstString.add("Aspen");
 		lstString.add("Telluride");
-		
+
 		System.out.println("***List Display Before Sort " + lstString);
 		Collections.sort(lstString); // Using sort of Collections
 		System.out.println("***List Display After Sort " + lstString);
 
 	}
-	
+
 	/**
 	 * For custom Object Collection sorting based on some criteria can be done by implementing interface Compartor or Comparable.
 	 * Comparator is prefered one for me becuase you can sort object based on multiple criteria like name, age etc.
 	 */
 	public void testSortStudent(){
 		List listStudent = new ArrayList<Student1>();
-		
+
 		//Define several student
 		Student1 s1 = new Student1("Yogesh");
 		Student1 s2 = new Student1("Ramesh");
 		Student1 s3 = new Student1("Ajay");
 		Student1 s4 = new Student1("Vijay");
 		Student1 s5 = new Student1("Bhoopy");
-		
+
 		listStudent.add(s1);
 		listStudent.add(s2);
 		listStudent.add(s3);
 		listStudent.add(s4);
 		listStudent.add(s5);
-		
+
 		System.out.println("***StudentList Display Before Name Sort " + listStudent);
 		Collections.sort(listStudent); // This using Comparable Interface for sorting Collections
 		System.out.println("***StudentList Display After Name Sort " + listStudent);

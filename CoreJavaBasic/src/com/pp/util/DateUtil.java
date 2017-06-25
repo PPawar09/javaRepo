@@ -1,5 +1,7 @@
 package com.pp.util;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -249,5 +251,30 @@ public class DateUtil {
 			logger.warning("Error in isDateLessEqualMinusDays: " + e.toString());			
 		    return false;
 		}
-	}	
+	}
+	
+	/**
+	 * Method return number of days between two dates
+	 * as a parameter
+	 * @param startDt
+	 * @param endDt
+	 * @return
+	 */
+	public static int getDaysDiff(Date startDt, Date endDt){
+		int diff = 0;
+	    long difference = (startDt.getTime()-endDt.getTime())/86400000; 
+	    diff = (int)Math.abs(difference);
+	    
+	    return diff; 
+	}
+	
+	public static void main(String args[])throws Exception{
+		String s1 = "18-09-2014"; 
+	    String s2 = "18-09-2015";
+	    DateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+	    Date startDt = f.parse(s1); 
+	    Date endDt = f.parse(s2);
+		int dayDiff = DateUtil.getDaysDiff(startDt, endDt);
+		System.out.println("********" + dayDiff);
+	}
 }

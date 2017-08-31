@@ -2,8 +2,9 @@ Java Topic Link :
 
 	> Problem Solving Java : http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/
 	> test online : http://www.pskills.org/corejava.jsp
-    > Java tutorial : http://tutorials.jenkov.com/java/annotations.html
- 
+        > Java tutorial : http://tutorials.jenkov.com/java/annotations.html
+	> Agile Process : http://www.agilenutshell.com/user_stories
+	
 1) OAuth POC  : Done
 2) annotations basics and example :  Done
 3) Reflection bascis and example :   Done
@@ -42,3 +43,8 @@ Java Topic Link :
 	> Clustering
 	> failover server functionality
 	> auto scaling
+
+16) Adhoc Topic
+	> MongoDB basic and example pending.
+	> Maven basic and example pending.
+	> 

@@ -8,3 +8,6 @@
 	search - m2e provides comprehensive Maven integration for Eclipse and install.
 	
 5) Maven create target folder where it keep all the generated jar file
+
+6) When you create a project the C:\Users\ppawar2\git\javaRepo\mavenWebSample\mavenWebSample
+   name of project appear in eclipse would the artifact ID.

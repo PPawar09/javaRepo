@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ppSoft</groupId> <!--  This groupId identifies your organization. -->
+  <artifactId>mavenHelloWorld</artifactId> <!-- identifies the project. More specifically, it identifies the artifact built from the project, like for instance a JAR file -->
+  <version>0.0.1-SNAPSHOT</version> <!-- The version identifies the version of the artifact which the POM file builds -->
+  <packaging>jar</packaging>  <!-- name of jar will be artifactId-version -->
+
+  <name>mavenHelloWorld</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

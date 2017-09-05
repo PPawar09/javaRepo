@@ -28,10 +28,12 @@ Java Topic Link :
 10) Log4j Logging standard : Done
 
 11) SMTP Basic : Pending
+		> Third party vendor like cheetah email
 
 12) Java XPath Tutorial: Done
                        : http://viralpatel.net/blogs/java-xml-xpath-tutorial-parse-xml/
                        : http://stackoverflow.com/questions/2811001/how-to-read-xml-using-xpath-in-java
+                       
 
 13) JAXB Tutorial :  Done
 				  https://jaxb.java.net/tutorial/
@@ -44,11 +46,9 @@ Java Topic Link :
 	> failover server functionality
 	> auto scaling
 	
- 16) Maven Link and example
- 	
+16) Maven Link and example : Done
  	> http://tutorials.jenkov.com/maven/your-first-maven-project.html 
 
 XX) Adhoc Topic
 	> MongoDB basic and example pending.
-	> Maven basic and example pending.
-	> 
+	

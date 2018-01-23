@@ -2,6 +2,7 @@ package com.pp.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
 // Ref : http://www.java67.com/2015/01/how-to-get-random-number-between-0-and-1-java.html
@@ -44,6 +45,10 @@ public class RandomNmbrUtil {
 	/* * returns random integer between minimum and maximum range */ 
 	public static int getRandomInteger(int maximum, int minimum){ 
 		return ((int) (Math.random()*(maximum - minimum))) + minimum; 
+	}
+	
+	public static String getUUId(){
+		return UUID.randomUUID().toString();
 	}
 
 

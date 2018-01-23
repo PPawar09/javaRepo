@@ -1,0 +1,13 @@
+1) run pom as maven install - will build the jar and run test bed as well.
+
+2) you should have Maven Pluggin in eclipse
+
+3) When you select archtype the prepare you the java project based on need like webApp Ejb or etc
+
+4) Install the MavePluging from EclipseMarket
+	search - m2e provides comprehensive Maven integration for Eclipse and install.
+	
+5) Maven create target folder where it keep all the generated jar file
+
+6) When you create a project the C:\Users\ppawar2\git\javaRepo\mavenWebSample\mavenWebSample
+   name of project appear in eclipse would the artifact ID.

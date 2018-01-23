@@ -25,6 +25,28 @@
 	Approach to handle JSON and xml Response is below link
     http://stackoverflow.com/questions/34432343/what-is-a-good-approach-to-verify-xml-response-from-restful-service-in-java
     
+ 3) 
+ 
+ 	> RESTful services (Mostly web integration, mobile phone apps)
+
+		- Integration over web will be easy with the REST. Popularly used with the AJAX calls.
+		- Not verbose as SOAP services so need less bandwidth hence good to use for the mobile apps.
+		- Web services are completely stateless so only for stateless services.
+
+	> JAX-WS and JAX-RPC are SOAP based services. (Enterprise web services)
+
+		- JAX-WS Java EE later versions support this and standards still evolving. - SOAP based services not preferred for mobile app 
+		  communication because of heavy payload compare to rest. - More suitable for the enterprise web services where you need interoperability, 
+		  transactions, message delivery and reliability.
+		  
+ 4) JAX-RPC versus JAX-WS
+ 
+ 		- https://www.ibm.com/developerworks/library/ws-tip-jaxwsrpc/index.html
+ 		
+ 		- JAX-WS is supposed to perform better in general than JAX-RPC, see the already mentioned article.
+		- JAX-RPC is a dead standard that has been pruned in Java EE 6 (and might thus be removed from future versions). 
+		  Reason for Pruning: JAX-RPC was an early attempt at modeling SOAP web services as RPC calls. Web services have since grown out of being an RPC model. 
+		  The much more robust, feature-rich and popular JAX-WS API effectively supercedes JAX-RPC 
     
    
    

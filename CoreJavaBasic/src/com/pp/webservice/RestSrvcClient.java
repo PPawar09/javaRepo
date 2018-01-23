@@ -44,12 +44,13 @@ public class RestSrvcClient {
 			// URL for JSON response "http://services.groupkt.com/state/get/IND/all"
 			// URL for XML response "api.openweathermap.org/data/2.5/weather?q=London&mode=xml"
 			
-			URL url = new URL("http://samples.openweathermap.org/data/2.5/weather?q=London&mode=xml&appid=b1b15e88fa797225412429c1c50c122a1");
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			//URL urlXmlResp = new URL("http://samples.openweathermap.org/data/2.5/weather?q=London&mode=xml&appid=b1b15e88fa797225412429c1c50c122a1");
+			URL urlJsonResp = new URL("http://services.groupkt.com/state/get/IND/all");
+			HttpURLConnection conn = (HttpURLConnection) urlJsonResp.openConnection();
 			
 			//conn.setRequestMethod("GET");
 			//conn.setRequestProperty("Accept", "application/json");
-			conn.setRequestProperty("Accept", "application/xml");
+			//conn.setRequestProperty("Accept", "application/xml");
 			
 
 			if (conn.getResponseCode() != 200) {

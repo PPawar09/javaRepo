@@ -20,6 +20,8 @@ public class JerseyRestClient {
 	//http://www.mkyong.com/webservices/jax-rs/restful-java-client-with-jersey-client/
 	
 	//http://www.baeldung.com/jersey-jax-rs-client
+	
+	//https://o7planning.org/en/11217/create-java-restful-client-with-jersey-client
 
 	public static void postRequest(){
 		  WebResource webResource = client.resource(postUrl);

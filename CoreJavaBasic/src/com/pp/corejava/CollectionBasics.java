@@ -3,6 +3,7 @@ package com.pp.corejava;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -18,6 +19,9 @@ public class CollectionBasics {
 		// Collection Utility API is Collections and Arrays can be used for conversion or sorting.
 		// Convert List to Set : Set<String> dataSet = new HashSet<String>(list);
 		// Convert Set to List : List<String> lst = new ArrayList<String>(dataSet);
+		// flavour of sorting.
+		// Option#1 Collections.sort(listStudent); //here listStudent impemnt Comparable Interface.
+		// Option#2 Collections.sort(al,new AgeComparator()); // here AgeComparator implements Comparator.
 		
 		CollectionBasics cb = new CollectionBasics();
 		cb.playList(); // ArrayList Example code
@@ -28,6 +32,7 @@ public class CollectionBasics {
 		cb.SortingCollections();
 		//custom object sorting by implementing compareTo of Interface Comaparable
 		cb.testSortStudent(); 
+
 	}
 
 	/**

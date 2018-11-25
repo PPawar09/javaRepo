@@ -1,0 +1,53 @@
+Ref : https://github.com/in28minutes/MavenIn28Minutes/blob/master/README.md
+
+1) Build LifeCycle/ Build Phase in Maven are :-
+
+		- Validate  : to make sure pom file is fine.
+		- Compile   : Src is compiling.
+		- Test		: Run the Junit test.
+		- Package
+		- Integration
+		- Verify
+		- Install / Deploy
+		
+
+		* Example Run the Command mvn test (here sequence Validate, Compile and Test)
+
+		* If we use Install it will run all the steps as above.
+		
+		* We can attach plugin to do build lifecycle.
+		
+		* There many pluggin define in Super or Parent POM.xml
+		
+2) POM Structure 
+
+
+		- Name     : Define the name of project
+		- Version  : version of project.
+		- Packaging  : Artifact we need like jar war
+		- Dependencies : Need of our project defined here.
+		- Plugins : like deploy webapp to tomcat server. so there is a plugin for it like for other stuff.
+
+3) Multi Module Maven Example
+
+		* There are three project 
+				- business layer which has sub project
+				- data layer  which has sub project
+				- model layer which has sub project
+				
+			Model layer is used by business and data layer.
+			Data layer depends on Model. 
+			Business layer depends on data and Model.
+			
+		* Entire configuration start with parent project . thats the first pom
+		  here packaging is pom (not jar or ect) it mean it is parent pom for other pom defined in 
+		  <modules>
+			<module>model</module>
+			<module>data</module>
+			<module>business</module>
+		  </modules>
+		  
+		
+		 
+		
+		

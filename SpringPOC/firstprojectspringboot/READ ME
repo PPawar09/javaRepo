@@ -1,0 +1,5 @@
+Reference : https://github.com/in28minutes/SpringBootForBeginners
+
+1) Annotation That Spring look for when it start.
+
+   @Component @RestController @Controller @Service @Repository

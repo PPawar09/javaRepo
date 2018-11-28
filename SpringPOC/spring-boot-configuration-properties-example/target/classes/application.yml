@@ -1,0 +1,14 @@
+myapp: 
+  mail: 
+    to: sunil@example.com
+    host: mail.example.com
+    port: 250
+    cc: 
+      - mike@example.com
+      - david@example.com
+    bcc: 
+      - sumit@example.com
+      - admin@example.com
+    credential:
+      user-name: sunil1234
+      password: xyz@1234

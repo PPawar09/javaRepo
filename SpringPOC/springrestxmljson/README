@@ -1,0 +1,7 @@
+This will return both XML or JSON Response based on request header
+
+http://localhost:8080/springrestxmljson/rest/emp/dummy
+
+1) For JSON Accept = application/json
+
+2) For XML Accept = application/xml

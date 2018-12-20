@@ -9,6 +9,9 @@ import com.websystique.springmvc.domain.Message;
 @RestController
 public class HelloWorldRestController {
  
+	/*
+	 * Test URL http://localhost:8080/HelloWorldSpringMvc/
+	 */
     @RequestMapping("/")
     public String welcome() {//Welcome page, non-rest
         return "Welcome to RestTemplate Example.";

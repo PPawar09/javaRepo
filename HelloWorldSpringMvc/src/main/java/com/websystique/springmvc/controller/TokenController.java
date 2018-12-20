@@ -33,6 +33,19 @@ public class TokenController {
         this.loginService = loginService;
         this.jwtService = jwtService;
     }
+    
+    
+    /*
+     * Test Reqiuest url http://localhost:8080/HelloWorldSpringMvc/gettoken
+     * 	
+     * {
+			"username":"greenostrich307",
+			"password":"darkange"
+		}
+     * 
+     * 
+     * 
+     */
 
     @RequestMapping(path = "",
             method = POST,

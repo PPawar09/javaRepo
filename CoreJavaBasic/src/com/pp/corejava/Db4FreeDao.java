@@ -36,7 +36,7 @@ public class Db4FreeDao {
 	/**
 	 * This get the online DB Connection
 	 */
-	private Connection getMySqlConnection(){
+	private Connection getMySqlConnection() throws Exception{
 
 		try{
 			if(null == con){
@@ -50,6 +50,7 @@ public class Db4FreeDao {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
+			throw e;
 		}
 
 		return con;

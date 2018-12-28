@@ -13,8 +13,23 @@
 		<org.springframework-version>4.0.0.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.7.4</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
+		<mysql.connector.version>5.1.47</mysql.connector.version>
 	</properties>
 	<dependencies>
+		<!-- jdbc -->  
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        
+        <!-- MySQL database driver -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connector.version}</version>
+        </dependency>
+	
 		<!-- Form Validation using Annotations -->  
 		<dependency>
 			<groupId>javax.validation</groupId>

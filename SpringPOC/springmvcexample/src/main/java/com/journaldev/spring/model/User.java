@@ -8,8 +8,14 @@ public class User {
 	private String lastname;
 	private String email;
 	private String address;
-	private int phone;
+	private String phone;
 	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getUserName() {
 		return userName;
 	}
@@ -46,13 +52,6 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public int getPhone() {
-		return phone;
-	}
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
-
 	
 	
 }

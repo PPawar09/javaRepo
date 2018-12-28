@@ -16,6 +16,7 @@
 		<mysql.connector.version>5.1.47</mysql.connector.version>
 	</properties>
 	<dependencies>
+		        
 		<!-- jdbc -->  
 		<dependency>
             <groupId>org.springframework</groupId>
@@ -68,6 +69,12 @@
 		</dependency>
 
 		<!-- Logging -->
+		<!-- This will start logging Spring Related logs to debug the UI issue like bad request -->
+		<dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>

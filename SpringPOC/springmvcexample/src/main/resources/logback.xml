@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yy-MM-dd HH:mm:ss:SSS} %5p %t %c{2}:%L - %m%n</pattern>
+        </encoder>
+    </appender>
+    
+  	<!-- 3rdparty Loggers This enable Spring related trace to triage issue-->
+    <logger name="org.springframework" level="DEBUG" additivity="false">
+		<appender-ref ref="stdout" />
+	</logger>
+	
+	<!-- Application Loggers -->
+	<logger name="ccom.journaldev.spring" level="DEBUG" additivity="false">
+		<appender-ref ref="stdout" />
+	</logger>
+    
+    
+    <root level="DEBUG">
+        <appender-ref ref="stdout"/>
+    </root>
+    
+</configuration>

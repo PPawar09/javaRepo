@@ -1,1 +1,10 @@
 https://dzone.com/articles/junit-using-easymock
+
+Mockito Annotations
+Before hitting the keyboard to write application and unit tests, let’s quickly overview the useful 
+mockito annotations.
+
+@Mock is used for mock creation. It makes the test class more readable.
+@Spy is used to create a spy instance. We can use it instead spy(Object) method.
+@InjectMocks is used to instantiate the tested object automatically and inject all the @Mock or @Spy annotated field dependencies into it (if applicable).
+@Captor is used to create an argument captor

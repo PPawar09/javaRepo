@@ -1,0 +1,23 @@
+This article demonstrates supporting multiple output formats for your Spring 4 MVC application using Spring’s 
+ContentNegotiatingViewResolver. We will be generating application output in XML, JSON, PDF, 
+XLS and HTML format, all using Annotation based configuration. 
+
+Let’s get going.
+
+ContentNegotiatingViewResolver is an implementation of ViewResolver, which uses the requested media type 
+(based on filetype extension, URL parameter specifying type of output format or accept header) 
+to select a suitable View for a request. ContentNegotiatingViewResolver does not resolve view by 
+itself but delegates to other ViewResolver you can configure to handle specific views
+(XML,JSON,PDF,XLS,HTML,..).
+
+1) This use annotation based configuration of Spring framework instead on xml
+
+Url based output like pdf,json xml and htm is default
+
+http://localhost:8080/springmvc4viewresolver/pizzavalley/pizzaHut.xml
+
+http://localhost:8080/Spring4MVCContentNegotiatingViewResolverExample/pizzavalley/pizzaHut.pdf
+
+http://localhost:8080/Spring4MVCContentNegotiatingViewResolverExample/pizzavalley/pizzaHut.json
+
+http://localhost:8080/Spring4MVCContentNegotiatingViewResolverExample/pizzavalley/pizzaHut for html

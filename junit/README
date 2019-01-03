@@ -8,3 +8,9 @@ mockito annotations.
 @Spy is used to create a spy instance. We can use it instead spy(Object) method.
 @InjectMocks is used to instantiate the tested object automatically and inject all the @Mock or @Spy annotated field dependencies into it (if applicable).
 @Captor is used to create an argument captor
+
+***** Mokito Example 
+
+https://javacodehouse.com/blog/mockito-tutorial/
+
+https://javacodehouse.com/blog/junit-tutorial/

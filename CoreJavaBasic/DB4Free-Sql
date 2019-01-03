@@ -1,0 +1,25 @@
+CREATE TABLE users(
+    username VARCHAR(45) NOT NULL,
+    password VARCHAR(45) NULL,
+    firstname VARCHAR(45) NOT NULL,
+    lastname VARCHAR(45) NULL,
+    email VARCHAR(45) NULL,
+    address VARCHAR(45) NULL,
+    phone INT NULL,
+    PRIMARY KEY(username)
+)
+
+insert into users (username, password,firstname,lastname,email,address,phone) values
+   ('prakashpawar','admin','Prakash','Pawar','pp@pp.com','MQ1446','95858585885');
+
+************************
+
+create table DEPARTMENTS (  
+  deptno        number,  
+  name          varchar2(50) not null,  
+  location      varchar2(50),  
+  constraint pk_departments primary key (deptno)  
+);
+
+insert into departments (name, location) values
+   ('Finance','New York');

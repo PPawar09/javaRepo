@@ -22,13 +22,40 @@ public class StudentController {
 
 	@Autowired
 	private StudentService studentService;
-
+	
+	/*
+	 * Test data http://localhost:8080/HelloWorldSpringMvc/students/Student2/courses
+	 * 
+	 * Method is GET  
+	 * 
+	 * 
+	 */
+	
 	//@GetMapping("/students/{studentId}/courses")
 	@RequestMapping(value="/students/{studentId}/courses", method=RequestMethod.GET, produces = "application/json")
 	public List<Course> retrieveCoursesForStudent(@PathVariable String studentId) {
 		return studentService.retrieveCourses(studentId);
 	}
 
+	/*
+	 * Test Data : http://localhost:8080/HelloWorldSpringMvc/students/Student2/courses
+	 * 
+		  {
+	        "id": "Course6",
+	        "name": "Spring Boot",
+	        "description": "6K Students",
+	        "steps": [
+	            "Learn Maven",
+	            "Learn Spring",
+	            "Learn Spring MVC",
+	            "First Example",
+	            "Second Example"
+	        ]
+			}
+	 * 
+	 * 
+	 */
+	
 	@PostMapping("/students/{studentId}/courses")
 	public ResponseEntity<Void> registerStudentForCourse(
 			@PathVariable String studentId, @RequestBody Course newCourse) {

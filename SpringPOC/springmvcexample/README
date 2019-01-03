@@ -1,1 +1,16 @@
+http://websystique.com/spring-4-mvc-tutorial/
+
 http://localhost:8080/springmvcexample/home
+
+Topic Covered : 
+
+1) Basic MVC Project
+
+2) Form Validation
+
+3) Login Url for DB : http://localhost:8080/springmvcexample/loginNew
+
+					  http://localhost:8080/springmvcexample/register
+					  
+4) Form Validation http://localhost:8080/springmvcexample/enroll    same url handle get and post as request content
+   bootstrap styling used and message properties

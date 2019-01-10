@@ -48,6 +48,22 @@ public class JwtService {
 	   - Third part is signature and is generated with
 		 HMACSHA256( base64UrlEncode(header) + "." + base64UrlEncode(payload), secret base64 encoded )
 		 
+		  https://www.baeldung.com/java-json-web-tokens-jjwt
+		 
+		  JWT specification has seven of these specified as “registered” claims. They are:
+
+				iss	Issuer
+				sub	Subject
+				aud	Audience
+				exp	Expiration
+				nbf	Not Before
+				iat	Issued At
+				jti	JWT ID
+		  When building a JWT, you can put in any custom claims you wish. The list above simply represents 
+		  the claims that are reserved both in the key that is used and the expected type. 
+		  Our CSRF has a JWT ID, an “Issued At” time, a “Not Before” time, and an Expiration time. 
+		  The expiration time is exactly one minute past the issued at time.
+		 
      * 
      * 
      * 

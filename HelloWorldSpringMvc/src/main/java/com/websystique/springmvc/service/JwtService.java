@@ -36,6 +36,22 @@ public class JwtService {
         this.profileService = profileService;
     }
 
+    /*
+     * It consist of three parts each separated with a dot(.).
+     * 
+     * - First part is header which Base64 encoded. 
+     * 	 After decoding we will get something like { "alg": "HS256", //Algorithm used "typ": "JWT" }
+
+	   - Second part is claims and Base64 encoded. After decoding we will get something like 
+	   	 { "sub": "1234567890", "name": "John Doe", "admin": true }
+
+	   - Third part is signature and is generated with
+		 HMACSHA256( base64UrlEncode(header) + "." + base64UrlEncode(payload), secret base64 encoded )
+		 
+     * 
+     * 
+     * 
+     */
     public String tokenFor(MinimalProfile minimalProfile) throws IOException, URISyntaxException {
         byte[] secretKey = secretKeyProvider.getKey();
         String roundTrip = new String(secretKey, "UTF8");
@@ -44,6 +60,7 @@ public class JwtService {
         Date expiration = Date.from(LocalDateTime.now(UTC).plusHours(2).toInstant(UTC));
         return Jwts.builder()
                 .setSubject(minimalProfile.getUsername())
+                .claim("UserName", minimalProfile.getUsername())
                 .setExpiration(expiration)
                 .setIssuer(ISSUER)
                 .signWith(SignatureAlgorithm.HS512, secretKey)

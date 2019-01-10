@@ -5,6 +5,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,6 +56,11 @@ public class TokenController {
         return loginService.login(credentials)
                 .map(minimalProfile -> {
                     try {
+                    	String token = jwtService.tokenFor(minimalProfile);
+                    	System.out.println("** Token Generated **  "+ token);
+                    	
+                    	decodeJwt(token);
+                    	
                         response.setHeader("Token", jwtService.tokenFor(minimalProfile));
                     } catch (Exception e) {
                         throw new RuntimeException(e);
@@ -63,4 +69,30 @@ public class TokenController {
                 })
                 .orElseThrow(() -> new FailedToLoginException(credentials.getUsername()));
     }
+    
+    public void decodeJwt(String jwtToken){
+    	
+            System.out.println("------------ Decode JWT ------------");
+            String[] split_string = jwtToken.split("\\.");
+            String base64EncodedHeader = split_string[0];
+            String base64EncodedBody = split_string[1];
+            String base64EncodedSignature = split_string[2];
+
+            System.out.println("~~~~~~~~~ JWT Header ~~~~~~~");
+            Base64 base64Url = new Base64(true);
+            String header = new String(base64Url.decode(base64EncodedHeader));
+            System.out.println("JWT Header : " + header);
+
+
+            System.out.println("~~~~~~~~~ JWT Body ~~~~~~~");
+            String body = new String(base64Url.decode(base64EncodedBody));
+            System.out.println("JWT Body : "+body); 
+            
+            System.out.println("~~~~~~~~~ JWT Signature ~~~~~~~");
+            String sig = new String(base64Url.decode(base64EncodedSignature));
+            System.out.println("JWT Sig : "+sig);
+            
+            
+        }
+    
 }

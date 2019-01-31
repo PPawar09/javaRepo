@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -26,7 +26,9 @@
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 467px}
+.row.content {
+	height: 467px
+}
 
 /* Set gray background color and 100% height */
 .sidenav {
@@ -131,9 +133,15 @@ footer {
 					</div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-lg-12">
-								<form id="login-form" action="http://phpoll.com/login/process"
-									method="post" role="form" style="display: block;">
+							<div class="col-lg-8">
+								
+
+								<form id="login-form" action="<c:url value='/otsloginsubmit'/>"
+									method="post" modelAttribute="loginDto" role="form"
+									style="display: block;">
+									<c:if test="${not empty loginDto.loginError}">
+										<div class="alert alert-danger">${loginDto.loginError}</div>
+									</c:if>
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1"
 											class="form-control" placeholder="Username" value="">
@@ -196,6 +204,7 @@ footer {
 										</div>
 									</div>
 								</form>
+								
 							</div>
 						</div>
 					</div>

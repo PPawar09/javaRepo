@@ -16,7 +16,12 @@ public class UserService {
 	}
 	
 	public User validateUser(Login login){
-		User user = daoImpl.validateUser(login);
+		User user = null;
+		try{
+			user = daoImpl.validateUser(login);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		return user;
 	}
 }

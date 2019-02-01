@@ -61,7 +61,7 @@ footer {
 }
 
 .sidebar a {
-  padding: 6px 8px 6px 16px;
+  padding: 10px 8px 10px 16px;
   text-decoration: none;
   font-size: 20px;
   color: #818181;

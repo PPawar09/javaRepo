@@ -96,8 +96,16 @@ footer {
 					<li><a href="#">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="<c:url value='/otslogin' />"><span
-							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<c:if test="${isUserLogin == true}">
+						<li><a href="<c:url value='/otslogin' />">
+					 		<span class="glyphicon glyphicon-log-out"></span> Logout</a>
+						</li>
+					</c:if>
+					<c:if test="${isUserLogin == false || empty isUserLogin }">
+						<li><a href="<c:url value='/otslogin' />">
+					 		<span class="glyphicon glyphicon-log-in"></span> Login</a>
+						</li>
+					</c:if>
 				</ul>
 			</div>
 		</div>
@@ -107,8 +115,8 @@ footer {
 		<div class="row content">
 			<div class="col-sm-2 sidebar">
 				<a href="#home"><i class="fa fa-fw fa-home"></i> Home</a> 
-				<a href="<c:url value='/task' />"><i class="fa fa-tasks"></i> Task</a> 
-				<a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a> 
+				<a href="<c:url value='/task'/>"><i class="fa fa-tasks"></i> Task</a> 
+				<a href="<c:url value='/client'/>"><i class="fa fa-fw fa-user"></i> Clients</a> 
 				<a href="#clients"><i class="fa fa-clock-o"></i> TimeSheet</a> 
 				<a href="#services"><i class="fa fa-bell"></i> Reminder</a> 
 				<a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a> 

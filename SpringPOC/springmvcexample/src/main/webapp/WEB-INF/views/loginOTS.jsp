@@ -98,8 +98,16 @@ footer {
 					<li><a href="#">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-							Login</a></li>
+					<c:if test="${isUserLogin == true}">
+						<li><a href="<c:url value='/otslogin' />">
+					 		<span class="glyphicon glyphicon-log-out"></span> Logout</a>
+						</li>
+					</c:if>
+					<c:if test="${isUserLogin == false || empty isUserLogin }">
+						<li><a href="<c:url value='/otslogin' />">
+					 		<span class="glyphicon glyphicon-log-in"></span> Login</a>
+						</li>
+					</c:if>
 				</ul>
 			</div>
 		</div>

@@ -115,15 +115,15 @@ footer {
 			<div class="col-sm-2 sidebar">
 				<a href="#home"><i class="fa fa-fw fa-home"></i> Home</a> 
 					<a href="<c:url value='/task' />"><i class="fa fa-tasks"></i> Task</a> 
-					<a href="<c:url value='/client'/>"><i class="fa fa-fw fa-user"></i> Clients</a> 
+					<a href="<c:url value='/client' />"><i class="fa fa-fw fa-user"></i> Clients</a> 
 					<a href="#clients"><i class="fa fa-clock-o"></i> TimeSheet</a> 
 					<a href="#services"><i class="fa fa-bell"></i> Reminder</a> 
 					<a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
 			</div>
 			<div class="col-sm-8 text-left">
 				<div>
-					<h2>Task</h2>
-					<p>All Current Task Are </p>
+					<h2>Client</h2>
+					<p>All Current Client Are </p>
 					<div class="table-responsive">
 						<table class="table">
 							<thead>

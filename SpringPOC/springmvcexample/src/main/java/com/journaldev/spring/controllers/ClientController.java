@@ -13,15 +13,15 @@ import com.journaldev.spring.model.SessionData;
 import com.journaldev.spring.model.User;
 
 @Controller
-public class TaskController {
+public class ClientController {
 	
 	@Autowired
 	SessionData sessionData;
 	
-	@RequestMapping(value = "/task", method = RequestMethod.GET)
-	public ModelAndView showOtsTask(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping(value = "/client", method = RequestMethod.GET)
+	public ModelAndView showOtsCleint(HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("***sessionData.isUserLogin()****"+sessionData.isUserLogin());
-		ModelAndView mav = new ModelAndView("taskOTS");
+		ModelAndView mav = new ModelAndView("clientOTS");
 		mav.addObject("isUserLogin",sessionData.isUserLogin());
 		return mav;
 	}

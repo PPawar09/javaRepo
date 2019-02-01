@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.journaldev.spring.model.Login;
+import com.journaldev.spring.model.SessionData;
 import com.journaldev.spring.model.User;
 import com.journaldev.spring.service.UserService;
 
@@ -19,6 +20,9 @@ public class OTSLoginController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	SessionData sessionData;
 
 	@RequestMapping(value = "/otslogin", method = RequestMethod.GET)
 	public ModelAndView showOtsLogin(HttpServletRequest request, HttpServletResponse response) {
@@ -33,8 +37,10 @@ public class OTSLoginController {
 
 		ModelAndView mav = null;
 
-		if(null != userService.validateUser(user)){
+		if(true/*null != userService.validateUser(user)*/){
 			mav = new ModelAndView("homePageOTS");
+			sessionData.setUserLogin(true);
+			mav.addObject("isUserLogin",true);
 		}else{
 			mav = new ModelAndView("loginOTS"); // redirect to login page with Error Message
 			Login login = new Login();

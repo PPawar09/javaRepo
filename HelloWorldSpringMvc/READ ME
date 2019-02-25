@@ -1,0 +1,5 @@
+***** This Project is POC done for JWT Token ******
+
+> This is used to secure REST API using JWT Token.
+
+> Spring Security Filter is being used to implement same.

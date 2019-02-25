@@ -63,6 +63,12 @@ public class JwtService {
 		  the claims that are reserved both in the key that is used and the expected type. 
 		  Our CSRF has a JWT ID, an “Issued At” time, a “Not Before” time, and an Expiration time. 
 		  The expiration time is exactly one minute past the issued at time.
+		  
+		  **
+		  When a JWT token is generated, there is a secret that is used to generate the token. 
+		  Only the server should know this secret. If someone were to modify the data contained in the JWT, 
+		  the server would fail to decode it. This means the server can trust any JWT that it can decode 
+		  and verify. 
 		 
      * 
      * 

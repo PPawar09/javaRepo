@@ -76,7 +76,7 @@ public class CollectionBasics {
 		}
 
 		//convert List into Array.
-		String[] abc = strLst.toArray(new String[0]);
+		String[] abc = (String[])strLst.toArray();
 
 		//convert array into List
 		List abcList = Arrays.asList(abc);

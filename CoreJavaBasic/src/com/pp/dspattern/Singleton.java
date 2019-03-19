@@ -1,5 +1,7 @@
 package com.pp.dspattern;
 
+import com.pp.corejava.SingleTon;
+
 /**
  * 	> Singleton design pattern is one of the most common patterns you will see in Java applications and 
  *    it’s also used heavily in core Java libraries.
@@ -22,9 +24,16 @@ package com.pp.dspattern;
 public class Singleton {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//exmaple of SingleTon
 		ConnectionSingle cn = ConnectionSingle.getConnection();
 		cn.displayMsg();
+		
+		//get simpleSingleTon
+		SimpleSingleTon sst = SimpleSingleTon.getInstance();
+		
+		//get ThreadSafe SingleTon
+		ThreadSafeSingleton tss = ThreadSafeSingleton.getInstance();
 	}
 }
 
@@ -54,10 +63,28 @@ class ThreadSafeSingleton {
 
 	private ThreadSafeSingleton(){}
 
+	//to make it ThreadSafe
 	public static synchronized ThreadSafeSingleton getInstance(){
 		if(instance == null){
 			instance = new ThreadSafeSingleton();
 		}
 		return instance;
+	}
+}
+
+class SimpleSingleTon {
+	
+	private static SimpleSingleTon st = null;
+	
+	private SimpleSingleTon(){
+		
+	}
+	
+	public static SimpleSingleTon getInstance(){
+		
+		if(st == null){
+			st = new SimpleSingleTon();
+		}
+		return st;
 	}
 }

@@ -26,7 +26,7 @@ public class Db4FreeDao {
 	
 	private String querySelectDerpartment = "SELECT * FROM DEPARTMENTS";
 	private String queryInsertDerpartment = "";
-	private String user = "prakash";
+	private String user = "prakashnew";
 	private String pass = "prak1234";
 	private String dbClass = "com.mysql.jdbc.Driver";
 	private String dbConUrl = "jdbc:mysql://db4free.net:3306/playsoft";

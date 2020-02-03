@@ -1,0 +1,44 @@
+
+Reference : https://www.journaldev.com/2603/spring-transaction-management-jdbc-example
+
+
+
+Important points to note in the spring bean configuration file are:  spring.xml
+
+tx:annotation-driven element is used to tell Spring context that we are using annotation based 
+transaction management configuration. transaction-manager attribute is used to provide the 
+transaction manager bean name. transaction-manager default value is transactionManager 
+but I am still having it to avoid confusion. proxy-target-class attribute is used to tell 
+Spring context to use class based proxies, without it you will get runtime exception with 
+message such as Exception in thread “main” org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 
+‘customerManager’ must be of type [com.journaldev.spring.jdbc.service.CustomerManagerImpl], 
+but was actually of type [com.sun.proxy.$Proxy6]
+Since we are using JDBC, we are creating transactionManager bean of type org.springframework.jdbc.datasource.DataSourceTransactionManager.
+ This is very important and we should use proper transaction manager implementation class based on our transaction API use.
+dataSource bean is used to create the DataSource object and we are required to provide the database configuration properties 
+such as driverClassName, url, username and password. Change these values based on your local settings.
+
+
+We are injecting dataSource into customerDAO bean. Similarly we are injecting customerDAO bean into customerManager bean definition.
+Our setup is ready, let’s create a simple test class to test our transaction management implementation.
+
+Notice that I am explicitly setting address column value too long so that we will get exception while inserting data into Address table.
+Now when we run our test program, we get following output.
+
+
+Notice the log message says that data inserted into customer table successfully but exception thrown by MySQL database driver clearly says 
+that value is too long for the address column. 
+Now if you will check the Customer table, you won’t find any row there that means that transaction is rolled back completely.
+
+If you are wondering where the transaction management magic is happening, look at the logs carefully and notice the AOP and Proxy classes 
+created by Spring framework. Spring framework is using Around advice to generate a proxy class for CustomerManagerImpl and only 
+committing the transaction if the method returns successfully. If there is any exception, it’s just rolling back the whole transaction. 
+I would suggest you to read Spring AOP Example to learn more about Aspect Oriented Programming model.
+
+That’s all for Spring Transaction Management Example, download the sample project from below link and play around with it to learn more.
+
+
+
+
+
+

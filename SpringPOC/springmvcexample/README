@@ -12,5 +12,10 @@ Topic Covered :
 
 					  http://localhost:8080/springmvcexample/register
 					  
-4) Form Validation http://localhost:8080/springmvcexample/enroll    same url handle get and post as request content
+4) Form Validation http://localhost:8080/springmvcexample/enroll    
+   same url handle get and post as request content @RequestMapping(value = "/login",method = { RequestMethod.GET,
+			RequestMethod.POST })
    bootstrap styling used and message properties
+   
+5) Example with fond awsome
+  http://localhost:8080/springmvcexample/otslogin 

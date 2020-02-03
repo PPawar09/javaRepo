@@ -22,6 +22,9 @@ public class HelloWorldController {
  
     /*
      * This method will serve as default GET handler.
+     * handle both get and post
+     * @RequestMapping(value = "/login",method = { RequestMethod.GET,
+			RequestMethod.POST })
      *
      */
     @RequestMapping(method = RequestMethod.GET)

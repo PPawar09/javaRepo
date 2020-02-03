@@ -148,6 +148,9 @@ footer {
 							</tbody>
 						</table>
 					</div>
+					<div>
+					<i class="fal fa-square"></i>
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-2 sidenav">

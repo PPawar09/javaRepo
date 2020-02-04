@@ -1,0 +1,29 @@
+Reference : https://www.journaldev.com/7655/spring-orm-example-jpa-hibernate-transaction
+
+I have used in-memory database for Spring ORM example, so no need for any database setup 
+(but you can change it to any other database in the spring.xml datasource section). 
+This is a Spring ORM standalone application to minimize all dependencies 
+(but you can easily change it to a web project by configuration if you get familiar with spring).
+
+
+We want to use transaction management, so methods are annotated with @Transactional Spring annotation. 
+The listAll method only reads the database so we set the 
+@Transactional annotation to read-only for optimisation.
+
+spring.xml Explained
+
+
+> First we tell spring that we want to use classpath scanning for Spring components (Services, DAOs) rather than defining them 
+  one by one in spring xml. We have also enabled Spring annotation detection.
+> Adding the datasource, that is currently HSQLDB in-memory database.
+> We set up a JPA EntityManagerFactory that will used by the application to obtain an EntityManager. Spring supports 3 different ways to do this, 
+  we have used LocalContainerEntityManagerFactoryBean for full JPA capabilities.
+  
+  We set LocalContainerEntityManagerFactoryBean attributes as:
+
+		packagesToScan attribute that points to our model classes package.
+		datasource defined earlier in spring configuration file.
+		jpaVendorAdapter as Hibernate and setting some hibernate properties.
+> We create Spring PlatformTransactionManager instance as a JpaTransactionManager. This transaction manager is appropriate for applications 
+  that use a single JPA EntityManagerFactory for transactional data access.
+> We enable the configuration of transactional behavior based on annotations, and we set the transactionManager we created.

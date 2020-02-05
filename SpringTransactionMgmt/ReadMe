@@ -1,6 +1,10 @@
 
 Reference : https://www.journaldev.com/2603/spring-transaction-management-jdbc-example
 
+https://www.roytuts.com/declarative-transaction-management-example-in-spring/
+
+https://www.roytuts.com/programmatic-transaction-management-example-in-spring/
+
 
 
 Important points to note in the spring bean configuration file are:  spring.xml

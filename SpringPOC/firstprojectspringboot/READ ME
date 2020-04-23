@@ -1,5 +1,17 @@
 Reference : https://github.com/in28minutes/SpringBootForBeginners
 
+************ 
+when setup this project in new machine. if any error related to maven
+	- right click on project - > maven - > update project.
+
+
 1) Annotation That Spring look for when it start.
 
    @Component @RestController @Controller @Service @Repository
+   
+2) Testing step for Spring Boot Project.
+   
+   * Right click on Application run as Java application.
+   * This will start embeded tomcat server.
+   * test url : http://localhost:8080/welcome
+   

@@ -1,6 +1,10 @@
 Reference : https://github.com/in28minutes/SpringBootForBeginners
 
-************ 
+Introduction : This project is all about POC on spring Boot Just Basic.
+
+
+************************ More Info ************************************
+
 when setup this project in new machine. if any error related to maven
 	- right click on project - > maven - > update project.
 

@@ -8,7 +8,7 @@
   <description>HelloWorldSpringMvc</description>
   
     <properties>
-        <springframework.version>4.3.0.RELEASE</springframework.version>
+        <springframework.version>5.2.5.RELEASE</springframework.version>
         <springsecurity.version>4.0.4.RELEASE</springsecurity.version>
         <jackson.library>2.7.5</jackson.library>
     </properties>

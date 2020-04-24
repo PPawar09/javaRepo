@@ -52,7 +52,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 		String[] patterns = new String[] {
 				"/login",
-				"/students/**/*",
 				"/gettoken",
 				"/bower_components/**/*",
 				"/app/**/*",

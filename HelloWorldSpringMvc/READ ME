@@ -1,5 +1,62 @@
-***** This Project is POC done for JWT Token ******
+***** This Project is POC done for REST Service Secured using JWT Token ******
+
+Not this but other reference of OAuth Impl :  http://websystique.com/spring-security/secure-spring-rest-api-using-oauth2/
+This is better with Access and refres token example
 
 > This is used to secure REST API using JWT Token.
 
 > Spring Security Filter is being used to implement same.
+
+> SecurityConfiguration here secure ulr or unsecured url is configured
+
+************************ More Info ************************************
+
+Few Steps to resolve maven Issue 
+	- when setup this project in new machine. if any error related to maven
+	- right click on pom file -> run as maven install.
+	- right click on project - > maven - > update project
+	
+**************** Test Case ************************************
+
+> Start server and open post man 
+
+> http://localhost:8080/HelloWorldSpringMvc/gettoken
+		
+Method POST  JSON 
+
+		{
+			"username":"greenostrich307",
+			"password":"darkange"
+		}
+		
+		
+Response 
+
+		header token will have the JWT token based on the profile passed. this tokel will valid for some time.
+		That need to passed as bearer token in secured url like. 
+		
+> Call secure url without token you will get error 403 then pass token it should work
+		You need to pass token in Authorization tab in postman under bearer.
+		
+		GET http://localhost:8080/HelloWorldSpringMvc/students/Student2/courses
+		
+****************************** TOken ****************************
+
+
+Below are the steps to do revoke your JWT access token:
+
+1) When you do log in, send 2 tokens (Access token, Refresh token) in response to the client.
+2) The access token will have less expiry time and Refresh will have long expiry time.
+3) The client (Front end) will store refresh token in his local storage and access token in cookies.
+4) The client will use an access token for calling APIs. But when it expires, pick the refresh token from local storage and call auth server API to get the new token.
+5) Your auth server will have an API exposed which will accept refresh token and checks for its validity and return a new access token.
+6) Once the refresh token is expired, the User will be logged out.
+
+Please let me know if you need more details, I can share the code (Java + Spring boot) as well.
+
+For your questions:
+Que 1: It's another JWT with fewer claims put in with long expiry time.
+
+Que 2: It won't be in a database. The backend will not store anywhere. 
+They will just decrypt the token with private/public key and validate it with its expiry time also.
+		

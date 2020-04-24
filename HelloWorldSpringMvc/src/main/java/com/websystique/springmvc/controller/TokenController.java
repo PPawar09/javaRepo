@@ -17,6 +17,13 @@ import com.websystique.springmvc.jwt.LoginCredentials;
 import com.websystique.springmvc.service.JwtService;
 import com.websystique.springmvc.service.LoginService;
 
+/**
+ * This Class is the one which generate the token and append in the response as header. which furthure will be used
+ * for calling secured operation.
+ * @author ppawar2
+ *
+ */
+
 @RestController
 @RequestMapping(path = "/gettoken")
 public class TokenController {
@@ -61,6 +68,7 @@ public class TokenController {
                     	
                     	decodeJwt(token);
                     	
+                    	//this will generate jwt token and append as header in response
                         response.setHeader("Token", jwtService.tokenFor(minimalProfile));
                     } catch (Exception e) {
                         throw new RuntimeException(e);

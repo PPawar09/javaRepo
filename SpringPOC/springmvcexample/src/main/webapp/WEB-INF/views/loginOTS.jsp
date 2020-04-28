@@ -136,14 +136,14 @@ footer {
 							<div class="col-lg-8">
 								
 
-								<form id="login-form" action="<c:url value='/otsloginsubmit'/>"
+								<form id="login-form" action="otsloginsubmit"
 									method="post" modelAttribute="loginDto" role="form"
 									style="display: block;">
 									<c:if test="${not empty loginDto.loginError}">
 										<div class="alert alert-danger">${loginDto.loginError}</div>
 									</c:if>
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1"
+										<input type="text" name="loginId" id="loginId" tabindex="1"
 											class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
@@ -175,14 +175,26 @@ footer {
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="" method="post" role="form"
+								<form id="register-form" action="otssignupsubmit" method="post" modelAttribute="loginDto" role="form"
 									style="display: none;">
+
+									<div class="form-group row">
+										<div class="col-md-6">
+											<input type="text" name="firstName" id="firstName" tabindex="1"
+											class="form-control" placeholder="FirstName" value="">
+										</div>
+										<div class="col-md-6">
+											<input type="text" name="lastName" id="lastName" tabindex="1"
+											class="form-control" placeholder="LastName" value="">
+										</div>
+									</div>
+								
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1"
+										<input type="text" name="loginId" id="loginId" tabindex="1"
 											class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1"
+										<input type="email" name="emailId" id="emailId" tabindex="1"
 											class="form-control" placeholder="Email Address" value="">
 									</div>
 									<div class="form-group">
@@ -190,8 +202,8 @@ footer {
 											tabindex="2" class="form-control" placeholder="Password">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm-password"
-											id="confirm-password" tabindex="2" class="form-control"
+										<input type="password" name="confirmPassword"
+											id="confirmPassword" tabindex="2" class="form-control"
 											placeholder="Confirm Password">
 									</div>
 									<div class="form-group">

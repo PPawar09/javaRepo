@@ -188,8 +188,6 @@ footer {
 										<strong>User Registration Failed !!</strong>
 										</div>
 									</c:if>
-									
-								
 									<div class="form-group row">
 										<div class="col-md-6">
 											<input type="text" name="firstName" id="firstName" tabindex="1"
@@ -222,10 +220,10 @@ footer {
 										<div class="row">
 											<c:choose>
 												<c:when test="${loginDto.registerFlg}">
-													<div class="col-sm-6 col-sm-offset-3">
-														<input type="submit" name="register-submit"
-															id="register-submit" tabindex="4"
-															class="form-control btn btn-register" value="Login Now">
+													<div class="col-sm-6 col-sm-offset-5">
+														<a href="<c:url value="/otslogin"/>" class="text-primary">
+														<strong>Login Now</strong>
+														</a>
 													</div>
 												</c:when>
 												<c:otherwise>

@@ -10,19 +10,50 @@
 
 1) Table : login
 
-	CREATE TABLE IF NOT EXISTS `login` (
-	  `id` int(11) NOT NULL AUTO_INCREMENT,
-	  `username` varchar(255) NOT NULL,
-	  `password` varchar(255) NOT NULL,
-	  `old_password` varchar(1000) NOT NULL,
-	  `wrong_login_attempt` int(11) NOT NULL,
-	  `today_login_attempt` int(11) NOT NULL,
-	  `is_now_login` varchar(10) NOT NULL DEFAULT 'no',
-	  `date` date NOT NULL,
-	  `time` time NOT NULL,
-	  `timestamp` varchar(20) NOT NULL,
-	  PRIMARY KEY (`id`)
+	CREATE TABLE IF NOT EXISTS `LOGIN_USER_DATA` (
+	  `ID` int(11) NOT NULL AUTO_INCREMENT,
+	  `FIRST_NAME` varchar(20) NOT NULL,
+	  `LAST_NAME` varchar(20) NOT NULL,
+	  `EMAIl_ID` varchar(30) NOT NULL,
+	  `LOGIN_ID` varchar(20) NOT NULL,
+	  `PASSWORD` varchar(15) NOT NULL,
+	  `OLD_PASSWORD` varchar(15),
+	  `WRONG_LOGIN_ATTEMPT` int(2),
+	  `REC_DATE` DATE NOT NULL,
+	  `REC_TS` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	  PRIMARY KEY (`ID`)
 	) 
+	
+	INSERT INTO `LOGIN_USER_DATA`(`FIRST_NAME`, `LAST_NAME`, `EMAIl_ID`, `LOGIN_ID`, `PASSWORD`, `REC_DATE`) 
+	VALUES ('Prakash','Pawar','ppawar2@pp.com','ppawar2','prak1234','2020-04-06');
 
-	INSERT INTO `login`(`id`, `username`, `password`, `old_password`, `wrong_login_attempt`, `today_login_attempt`, `is_now_login`, `date`, `time`, `timestamp`) 
-	VALUES (12,'ppawar2','prak1234','prak1234',1,3,'yes','2020-04-06','4:40','828282882')
+		
+2) Table : TimeSheetRecord
+
+	CREATE TABLE IF NOT EXISTS `TimeSheetRecord` (
+	  `id` int(11) REFERENCES login(id),
+	  `Name` varchar(30) NOT NULL,
+	  `Client` varchar(50) NOT NULL,
+	  `TaskDesc` varchar(100) NOT NULL,
+	  `StartDate` date NOT NULL,
+	  `BillingStatus` varchar(10) NOT NULL,
+	  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	  PRIMARY KEY (`id`,`Name`)
+	)
+
+3) Table : User
+
+	CREATE TABLE IF NOT EXISTS `User` (
+	  `id` int(11) REFERENCES login(id),
+	  `Name` varchar(30) NOT NULL,
+	  `emailid` varchar(50) NOT NULL,
+	  `registerDate` date NOT NULL,
+	  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	  PRIMARY KEY (`id`)
+	)
+	
+	
+*************** Reference command alter
+
+DROP TABLE User;
+	

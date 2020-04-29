@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.journaldev.spring.model.Login;
+import com.journaldev.spring.model.OtsUser;
 import com.journaldev.spring.model.SessionData;
 import com.journaldev.spring.model.User;
 import com.journaldev.spring.service.UserService;
@@ -37,7 +38,7 @@ public class OTSLoginController {
 
 		ModelAndView mav = null;
 
-		if(true/*null != userService.validateUser(user)*/){
+		if(null != userService.validateUser(user)){
 			mav = new ModelAndView("homePageOTS");
 			sessionData.setUserLogin(true);
 			mav.addObject("isUserLogin",true);
@@ -48,6 +49,24 @@ public class OTSLoginController {
 			mav.addObject("loginDto",login);
 		}
 
+		return mav;
+	}
+	
+	@RequestMapping(value = "/otssignupsubmit", method = RequestMethod.POST)
+	public ModelAndView otsSignUpSubmit(HttpServletRequest request, HttpServletResponse response,
+			@ModelAttribute("loginDto") Login user) {
+		
+		user.setSignUpTab(true);
+		ModelAndView mav = null;
+		if(userService.register(user)){
+			mav = new ModelAndView("loginOTS"); // redirect to login page with Error Message
+			user.setRegisterFlg(true);
+			mav.addObject("loginDto",user);
+		}else{
+			mav = new ModelAndView("loginOTS"); // redirect to login page with Error Message
+			user.setLoginError("");
+			mav.addObject("loginDto",user);
+		}
 		return mav;
 	}
 	

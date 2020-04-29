@@ -12,6 +12,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
+import com.journaldev.common.DateUtil;
 import com.journaldev.spring.model.Login;
 import com.journaldev.spring.model.User;
 
@@ -20,6 +21,8 @@ public class UserDaoImpl implements UserDao {
 	DataSource datasource;
 	@Autowired
 	JdbcTemplate jdbcTemplate;
+	
+	private String inserLoginUsrQry = "INSERT INTO LOGIN_USER_DATA (FIRST_NAME,LAST_NAME,EMAIl_ID,LOGIN_ID,PASSWORD,REC_DATE) VALUES (?,?,?,?,?,?)";
 
 	public void register(User user) {
 		String sql = "insert into users values(?,?,?,?,?,?,?)";
@@ -28,8 +31,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	public User validateUser(Login login) {
-		String sql = "select * from users where username='" + login.getUsername() + "' and password='" + login.getPassword()
-				+ "'";
+		String sql = "SELECT * FROM LOGIN_USER_DATA where LOGIN_ID='" + login.getLoginId() + "' and PASSWORD='" + login.getPassword()+ "'";
 		List<User> users = null;
 		try{
 			users = jdbcTemplate.query(sql, new ResultSetExtractor<List<User>>() {
@@ -38,11 +40,11 @@ public class UserDaoImpl implements UserDao {
 						throws SQLException, DataAccessException {
 					while (rs.next()) {
 						User user = new User();
-						user.setFirstname(rs.getString("firstname"));
+						/*user.setFirstname(rs.getString("firstname"));
 						user.setLastname(rs.getString("lastname"));
 						user.setEmail(rs.getString("email"));
 						user.setAddress(rs.getString("address"));
-						user.setPhone(Integer.toString(rs.getInt("phone")));
+						user.setPhone(Integer.toString(rs.getInt("phone")));*/
 
 						listUser.add(user);
 					}
@@ -53,6 +55,16 @@ public class UserDaoImpl implements UserDao {
 			e.printStackTrace();
 		}
 		return users.size() > 0 ? users.get(0) : null;
+	}
+	
+	public boolean registerUser(Login login) {
+		int dbRetCode;
+		dbRetCode = jdbcTemplate.update(inserLoginUsrQry, new Object[] { login.getFirstName(), login.getLastName(),login.getEmailId(),
+				login.getLoginId(), login.getPassword(), DateUtil.getCurrentSdfDate("yyyy-MM-dd") });
+		System.out.println("***********"+ dbRetCode);
+		if (dbRetCode == 1)
+			return true;
+		return false;
 	}
 }
 

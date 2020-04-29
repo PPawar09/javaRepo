@@ -11,8 +11,8 @@ public class UserService {
 	@Autowired
 	UserDaoImpl daoImpl;
 	
-	public void register(User user){
-		daoImpl.register(user);
+	public boolean register(Login user){
+		return daoImpl.registerUser(user);
 	}
 	
 	public User validateUser(Login login){

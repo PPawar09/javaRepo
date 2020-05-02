@@ -2,6 +2,7 @@ package com.journaldev.spring.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -40,6 +41,14 @@ public class PersonDAOImpl implements PersonDAO {
 	public List<Person> listPersons() {
 		Session session = this.sessionFactory.getCurrentSession();
 		List<Person> personsList = session.createQuery("from Person").list();
+		/*StringBuffer buf = new StringBuffer();
+		buf.append("from Person P WHERE P.country= :paramCountry");
+		
+		Query q = session.createQuery(buf.toString());
+		q.setString("paramCountry", "India");
+		
+		List<Person> personsList = q.list();*/
+		
 		for(Person p : personsList){
 			logger.info("Person List::"+p);
 		}

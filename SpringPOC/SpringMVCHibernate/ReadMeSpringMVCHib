@@ -1,3 +1,6 @@
 Refer : https://www.journaldev.com/3531/spring-mvc-hibernate-mysql-integration-crud-example-tutorial
 
+Refer : https://software-security.sans.org/developer-how-to/fix-sql-injection-in-java-hibernate
+this is to avoid SQL Injection
+
 Local Test URL : http://localhost:8080/SpringMVCHibernate/persons

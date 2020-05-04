@@ -31,14 +31,13 @@
 2) Table : TimeSheetRecord
 
 	CREATE TABLE IF NOT EXISTS `TimeSheetRecord` (
-	  `id` int(11) REFERENCES login(id),
-	  `Name` varchar(30) NOT NULL,
-	  `Client` varchar(50) NOT NULL,
-	  `TaskDesc` varchar(100) NOT NULL,
-	  `StartDate` date NOT NULL,
-	  `BillingStatus` varchar(10) NOT NULL,
-	  `timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	  PRIMARY KEY (`id`,`Name`)
+	  `USER_ID` int(11) REFERENCES LOGIN_USER_DATA(ID),
+	  `USER_NAME` varchar(30) NOT NULL,
+	  `CLIENT` varchar(50) NOT NULL,
+	  `TASK_DESC` varchar(500) NOT NULL,
+	  `START_DATE` date NOT NULL,
+	  `BILLING_STATUS` varchar(10) NOT NULL,
+	  `REC_TS` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 	)
 
 3) Table : User
@@ -52,6 +51,14 @@
 	  PRIMARY KEY (`id`)
 	)
 	
+4) Table : PERSON
+
+CREATE TABLE `PERSON` (
+`Id` INT(11) NOT NULL AUTO_INCREMENT,
+`name` VARCHAR(255) DEFAULT NULL,
+`country` VARCHAR(255) DEFAULT NULL,
+PRIMARY KEY (`Id`)
+)
 	
 *************** Reference command alter
 

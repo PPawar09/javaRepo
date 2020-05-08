@@ -28,9 +28,9 @@
 	VALUES ('Prakash','Pawar','ppawar2@pp.com','ppawar2','prak1234','2020-04-06');
 
 		
-2) Table : TimeSheetRecord
+2) Table : TIME_SHEET_REC
 
-	CREATE TABLE IF NOT EXISTS `TimeSheetRecord` (
+	CREATE TABLE IF NOT EXISTS `TIME_SHEET_REC` (
 	  `USER_ID` int(11) REFERENCES LOGIN_USER_DATA(ID),
 	  `USER_NAME` varchar(30) NOT NULL,
 	  `CLIENT` varchar(50) NOT NULL,
@@ -39,6 +39,9 @@
 	  `BILLING_STATUS` varchar(10) NOT NULL,
 	  `REC_TS` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 	)
+	
+	INSERT INTO `TIME_SHEET_REC`(`USER_ID`, `USER_NAME`, `CLIENT`, `TASK_DESC`, `START_DATE`, `BILLING_STATUS`) 
+	VALUES (1,'PrakashPawar','TestClient','Java Work','2020-04-06','Pending')
 
 3) Table : User
 

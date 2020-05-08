@@ -134,14 +134,16 @@ footer {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>Mark</td>
-							<td>Otto</td>
-							<td>@mdo</td>
-							<td>Otto</td>
-							<td>@mdo</td>
-						</tr>
+						<c:forEach items="${listUtr}" var="utr">
+							<tr>
+								<th scope="row">${utr.userId}</th>
+								<td>${utr.userName}</td>
+								<td>${utr.client}</td>
+								<td>${utr.taskDesc}</td>
+								<td>${utr.startDate}</td>
+								<td>${utr.billingStatus}</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>

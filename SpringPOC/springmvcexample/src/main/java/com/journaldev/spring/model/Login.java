@@ -1,6 +1,8 @@
 package com.journaldev.spring.model;
 
-public class Login {
+import java.io.Serializable;
+
+public class Login implements Serializable{
 	
 	private String id;
 	private String loginId;

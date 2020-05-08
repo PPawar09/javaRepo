@@ -15,6 +15,7 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import com.journaldev.common.DateUtil;
 import com.journaldev.spring.model.Login;
 import com.journaldev.spring.model.User;
+import com.journaldev.spring.model.UserTaskRecord;
 
 public class UserDaoImpl implements UserDao {
 	@Autowired
@@ -29,8 +30,31 @@ public class UserDaoImpl implements UserDao {
 		jdbcTemplate.update(sql, new Object[] { user.getUserName(), user.getPassword(), user.getFirstname(),
 				user.getLastname(), user.getEmail(), user.getAddress(), user.getPhone() });
 	}
+	
+	public Login validateUser(Login login) {
+		String sql = "SELECT * FROM LOGIN_USER_DATA where LOGIN_ID='" + login.getLoginId() + "' and PASSWORD='" + login.getPassword()+ "'";
+		List<Login> loginUsr = null;
+		try{
+			loginUsr = jdbcTemplate.query(sql, new ResultSetExtractor<List<Login>>() {
+				List<Login> listUser = new ArrayList<Login>();
+				public List<Login> extractData(ResultSet rs)
+						throws SQLException, DataAccessException {
+					while (rs.next()) {
+						Login user = new Login();
+						user.setId(rs.getString("ID"));
 
-	public User validateUser(Login login) {
+						listUser.add(user);
+					}
+					return listUser;
+				}
+			});
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return loginUsr.size() > 0 ? loginUsr.get(0) : null;
+	}
+
+	/*public User validateUser(Login login) {
 		String sql = "SELECT * FROM LOGIN_USER_DATA where LOGIN_ID='" + login.getLoginId() + "' and PASSWORD='" + login.getPassword()+ "'";
 		List<User> users = null;
 		try{
@@ -40,11 +64,11 @@ public class UserDaoImpl implements UserDao {
 						throws SQLException, DataAccessException {
 					while (rs.next()) {
 						User user = new User();
-						/*user.setFirstname(rs.getString("firstname"));
+						user.setFirstname(rs.getString("firstname"));
 						user.setLastname(rs.getString("lastname"));
 						user.setEmail(rs.getString("email"));
 						user.setAddress(rs.getString("address"));
-						user.setPhone(Integer.toString(rs.getInt("phone")));*/
+						user.setPhone(Integer.toString(rs.getInt("phone")));
 
 						listUser.add(user);
 					}
@@ -55,7 +79,7 @@ public class UserDaoImpl implements UserDao {
 			e.printStackTrace();
 		}
 		return users.size() > 0 ? users.get(0) : null;
-	}
+	}*/
 	
 	public boolean registerUser(Login login) {
 		int dbRetCode;
@@ -66,6 +90,38 @@ public class UserDaoImpl implements UserDao {
 			return true;
 		return false;
 	}
+	
+	public List<UserTaskRecord> getTaskById(String id) {
+		
+		String selectTSRecQry = "SELECT * FROM TIME_SHEET_REC where USER_ID='" + id + "'";
+		
+		List<UserTaskRecord> utrList = null;
+		try{
+			utrList = jdbcTemplate.query(selectTSRecQry, new ResultSetExtractor<List<UserTaskRecord>>() {
+				List<UserTaskRecord> listUser = new ArrayList<UserTaskRecord>();
+				public List<UserTaskRecord> extractData(ResultSet rs)
+						throws SQLException, DataAccessException {
+					while (rs.next()) {
+						UserTaskRecord utr = new UserTaskRecord();
+						utr.setUserId(rs.getString("USER_ID"));
+						utr.setBillingStatus(rs.getString("BILLING_STATUS"));
+						utr.setClient(rs.getString("CLIENT"));
+						utr.setStartDate(rs.getString("START_DATE"));
+						utr.setTaskDesc(rs.getString("TASK_DESC"));
+						utr.setUserName(rs.getString("USER_NAME"));
+
+						listUser.add(utr);
+					}
+					return listUser;
+				}
+			});
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return utrList;
+	}
 }
+
+
 
 

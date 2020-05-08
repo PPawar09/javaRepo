@@ -1,5 +1,7 @@
 package com.journaldev.spring.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,9 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.journaldev.spring.model.Login;
-import com.journaldev.spring.model.OtsUser;
 import com.journaldev.spring.model.SessionData;
-import com.journaldev.spring.model.User;
+import com.journaldev.spring.model.UserTaskRecord;
 import com.journaldev.spring.service.UserService;
 
 @Controller
@@ -28,7 +29,7 @@ public class OTSLoginController {
 	@RequestMapping(value = "/otslogin", method = RequestMethod.GET)
 	public ModelAndView showOtsLogin(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("loginOTS");
-		mav.addObject("user", new User());
+		mav.addObject("user", new Login());
 		return mav;
 	}
 	
@@ -37,10 +38,14 @@ public class OTSLoginController {
 			@ModelAttribute("loginDto") Login user) {
 
 		ModelAndView mav = null;
+		List<UserTaskRecord> utrLst = null;
+		Login loggedUsr = userService.validateUser(user);
 
-		if(null != userService.validateUser(user)){
+		if(null != loggedUsr){
 			mav = new ModelAndView("homePageOTS");
+			utrLst = userService.getTaskByUserId(loggedUsr.getId());
 			sessionData.setUserLogin(true);
+			mav.addObject("listUtr", utrLst);
 			mav.addObject("isUserLogin",true);
 		}else{
 			mav = new ModelAndView("loginOTS"); // redirect to login page with Error Message
@@ -75,7 +80,7 @@ public class OTSLoginController {
 	@RequestMapping(value = "/otshome", method = RequestMethod.GET)
 	public ModelAndView showOtshomePage(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("homePageOTS");
-		mav.addObject("user", new User());
+		mav.addObject("user", new Login());
 		return mav;
 	}
 

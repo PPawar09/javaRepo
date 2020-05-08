@@ -29,5 +29,11 @@ Topic Covered :
   
   http://localhost:8080/springmvcexample/loginnew 
   
+  Pending Work 
+  
+  > Spinner for processing time
+  > Validate session ID if not valid then redirect to login page.
+  > Hibernate DB connection pool.
+  
   
   

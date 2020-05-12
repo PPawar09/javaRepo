@@ -14,6 +14,35 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>2.5</version>
+		<scope>provided</scope>
+	</dependency>
+
+	<dependency>
+		<groupId>org.togglz</groupId>
+		<artifactId>togglz-core</artifactId>
+		<version>2.6.1.Final</version>
+	</dependency>
+
+	<!-- Togglz for Servlet environments (mandatory for webapps) -->
+	<dependency>
+	  <groupId>org.togglz</groupId>
+	  <artifactId>togglz-servlet</artifactId>
+	  <version>2.6.1.Final</version>
+	</dependency>
+	
+	<!-- Togglz Admin Console -->
+	<dependency>
+	  <groupId>org.togglz</groupId>
+	  <artifactId>togglz-console</artifactId>
+	  <version>2.6.1.Final</version>
+	</dependency>
+    
+    
   </dependencies>
   <build>
     <finalName>mavenWebSample</finalName>

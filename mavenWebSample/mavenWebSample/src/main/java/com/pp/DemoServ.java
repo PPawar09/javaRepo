@@ -1,6 +1,7 @@
 package com.pp;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,13 +25,32 @@ public class DemoServ extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	}
+		
+		 request.setAttribute("feature1", MyFeatures.FEATURE_ONE.isActive());
+		 
+		 request.setAttribute("feature2", MyFeatures.FEATURE_TWO.isActive());
+		
+		if( MyFeatures.FEATURE_ONE.isActive() ) {
+			System.out.println("********FEATURE_ONE is Active********");
+		}else{
+			System.out.println("********FEATURE_ONE is Not Active********");
+		}
 
+		if( MyFeatures.FEATURE_TWO.isActive() ) {
+			System.out.println("********FEATURE_TWO is Active********");
+		}else{
+			System.out.println("********FEATURE_TWO is Not Active********");
+		}
+		
+		request.getRequestDispatcher("/index.jsp").forward(request, response);		
+	}
 }

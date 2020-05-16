@@ -19,3 +19,25 @@ Topic Covered :
    
 5) Example with fond awsome
   http://localhost:8080/springmvcexample/otslogin 
+  
+  ppawar2 / prak1234
+  
+  
+  ************ adding DB layer to be more dynamic *****************
+  
+  Refer : https://hellokoding.com/registration-and-login-example-with-spring-xml-configuration-maven-jsp-and-mysql/
+  
+  http://localhost:8080/springmvcexample/loginnew 
+  
+  Pending Work 
+  
+  > Spinner for processing time
+  > Validate session ID if not valid then redirect to login page.
+  > Hibernate DB connection pool.
+  
+  
+  
+  https://docs.spring.io/spring/docs/3.0.0.RC3/reference/html/ch12s03.html
+  
+  
+  

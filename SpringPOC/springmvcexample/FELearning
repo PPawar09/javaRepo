@@ -1,0 +1,10 @@
+**************** JSTL condition ****************** 
+
+<c:choose>
+    <c:when test="${inputDisplay == 1}">
+        <input type="text" />
+    </c:when>
+    <c:otherwise>
+        <input type="text" style="display:none;" />
+    </c:otherwise>      
+</c:choose>

@@ -16,7 +16,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
@@ -61,19 +62,17 @@ footer {
 }
 
 .sidebar a {
-  padding: 10px 8px 10px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
+	padding: 10px 8px 10px 16px;
+	text-decoration: none;
+	font-size: 20px;
+	color: #818181;
+	display: block;
 }
 
 .sidebar a:hover {
-  color: #a94442;
-  background-color: #555;
+	color: #a94442;
+	background-color: #555;
 }
-
-
 </style>
 </head>
 <body>
@@ -97,14 +96,14 @@ footer {
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<c:if test="${isUserLogin == true}">
-						<li><a href="<c:url value='/otslogin' />">
-					 		<span class="glyphicon glyphicon-log-out"></span> Logout</a>
-						</li>
+						<li><a href="<c:url value='/otslogin' />"> <span
+								class="glyphicon glyphicon-log-out"></span> Logout
+						</a></li>
 					</c:if>
 					<c:if test="${isUserLogin == false || empty isUserLogin }">
-						<li><a href="<c:url value='/otslogin' />">
-					 		<span class="glyphicon glyphicon-log-in"></span> Login</a>
-						</li>
+						<li><a href="<c:url value='/otslogin' />"> <span
+								class="glyphicon glyphicon-log-in"></span> Login
+						</a></li>
 					</c:if>
 				</ul>
 			</div>
@@ -114,27 +113,39 @@ footer {
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2 sidebar">
-				<a href="#home"><i class="fa fa-fw fa-home"></i> Home</a> 
-				<a href="<c:url value='/task'/>"><i class="fa fa-tasks"></i> Task</a> 
-				<a href="<c:url value='/client'/>"><i class="fa fa-fw fa-user"></i> Clients</a> 
-				<a href="#clients"><i class="fa fa-clock-o"></i> TimeSheet</a> 
-				<a href="#services"><i class="fa fa-bell"></i> Reminder</a> 
-				<a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a> 
+				<a href="#home"><i class="fa fa-fw fa-home"></i> Home</a> <a
+					href="<c:url value='/task'/>"><i class="fa fa-tasks"></i> Task</a>
+				<a href="<c:url value='/client'/>"><i class="fa fa-fw fa-user"></i>
+					Clients</a> <a href="#clients"><i class="fa fa-clock-o"></i>
+					TimeSheet</a> <a href="#services"><i class="fa fa-bell"></i>
+					Reminder</a> <a href="#services"><i class="fa fa-fw fa-wrench"></i>
+					Services</a>
 			</div>
 			<div class="col-sm-8 text-left">
-				<h1>Welcome</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-					enim ad minim veniam, quis nostrud exercitation ullamco laboris
-					nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat
-					cupidatat non proident, sunt in culpa qui officia deserunt mollit
-					anim id est laborum consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-					minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat.</p>
-				<hr>
-				<h3>Test</h3>
-				<p>Lorem ipsum...</p>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">UserId</th>
+							<th scope="col">Name</th>
+							<th scope="col">Client</th>
+							<th scope="col">Task</th>
+							<th scope="col">StartDate</th>
+							<th scope="col">BillingStatus</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${listUtr}" var="utr">
+							<tr>
+								<th scope="row">${utr.userId}</th>
+								<td>${utr.userName}</td>
+								<td>${utr.client}</td>
+								<td>${utr.taskDesc}</td>
+								<td>${utr.startDate}</td>
+								<td>${utr.billingStatus}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
 			<div class="col-sm-2 sidenav">
 				<div class="well">

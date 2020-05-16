@@ -1,5 +1,7 @@
 package com.journaldev.spring.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.journaldev.spring.model.Login;
 import com.journaldev.spring.model.SessionData;
-import com.journaldev.spring.model.User;
+import com.journaldev.spring.model.UserTaskRecord;
 import com.journaldev.spring.service.UserService;
 
 @Controller
@@ -27,7 +29,7 @@ public class OTSLoginController {
 	@RequestMapping(value = "/otslogin", method = RequestMethod.GET)
 	public ModelAndView showOtsLogin(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("loginOTS");
-		mav.addObject("user", new User());
+		mav.addObject("user", new Login());
 		return mav;
 	}
 	
@@ -36,10 +38,14 @@ public class OTSLoginController {
 			@ModelAttribute("loginDto") Login user) {
 
 		ModelAndView mav = null;
+		List<UserTaskRecord> utrLst = null;
+		Login loggedUsr = userService.validateUser(user);
 
-		if(true/*null != userService.validateUser(user)*/){
+		if(null != loggedUsr){
 			mav = new ModelAndView("homePageOTS");
+			utrLst = userService.getTaskByUserId(loggedUsr.getId());
 			sessionData.setUserLogin(true);
+			mav.addObject("listUtr", utrLst);
 			mav.addObject("isUserLogin",true);
 		}else{
 			mav = new ModelAndView("loginOTS"); // redirect to login page with Error Message
@@ -51,12 +57,30 @@ public class OTSLoginController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/otssignupsubmit", method = RequestMethod.POST)
+	public ModelAndView otsSignUpSubmit(HttpServletRequest request, HttpServletResponse response,
+			@ModelAttribute("loginDto") Login user) {
+		
+		user.setSignUpTab(true);
+		ModelAndView mav = null;
+		if(userService.register(user)){
+			mav = new ModelAndView("loginOTS"); // redirect to login page with Error Message
+			user.setRegisterFlg(true);
+			mav.addObject("loginDto",user);
+		}else{
+			mav = new ModelAndView("loginOTS"); // redirect to login page with Error Message
+			user.setLoginError("");
+			mav.addObject("loginDto",user);
+		}
+		return mav;
+	}
+	
 	
 	
 	@RequestMapping(value = "/otshome", method = RequestMethod.GET)
 	public ModelAndView showOtshomePage(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView("homePageOTS");
-		mav.addObject("user", new User());
+		mav.addObject("user", new Login());
 		return mav;
 	}
 

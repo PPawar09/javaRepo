@@ -134,16 +134,15 @@ footer {
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-8">
-								
-
-								<form id="login-form" action="<c:url value='/otsloginsubmit'/>"
+								<form id="login-form" action="otsloginsubmit"
 									method="post" modelAttribute="loginDto" role="form"
-									style="display: block;">
+									style="display:${loginDto.signUpTab ? 'none' : 'block'}">
+									
 									<c:if test="${not empty loginDto.loginError}">
 										<div class="alert alert-danger">${loginDto.loginError}</div>
 									</c:if>
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1"
+										<input type="text" name="loginId" id="loginId" tabindex="1"
 											class="form-control" placeholder="Username" value="">
 									</div>
 									<div class="form-group">
@@ -175,32 +174,66 @@ footer {
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="" method="post" role="form"
-									style="display: none;">
+								<form id="register-form" action="otssignupsubmit" method="post" modelAttribute="loginDto" role="form"
+									style="display:${loginDto.signUpTab ? 'block' : 'none'}">
+									
+									<c:if test="${loginDto.registerFlg}">
+										<div class="alert alert-success">
+											<strong>User Registered Successfully!!</strong>
+										</div>
+									</c:if>
+									
+									<c:if test="${not empty loginDto.loginError}">
+										<div class="alert alert-danger">
+										<strong>User Registration Failed !!</strong>
+										</div>
+									</c:if>
+									<div class="form-group row">
+										<div class="col-md-6">
+											<input type="text" name="firstName" id="firstName" tabindex="1"
+											class="form-control" placeholder="FirstName" value="${loginDto.firstName}">
+										</div>
+										<div class="col-md-6">
+											<input type="text" name="lastName" id="lastName" tabindex="1"
+											class="form-control" placeholder="LastName" value="${loginDto.lastName}">
+										</div>
+									</div>
+								
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1"
-											class="form-control" placeholder="Username" value="">
+										<input type="text" name="loginId" id="loginId" tabindex="1"
+											class="form-control" placeholder="Username" value="${loginDto.loginId}">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1"
-											class="form-control" placeholder="Email Address" value="">
+										<input type="email" name="emailId" id="emailId" tabindex="1"
+											class="form-control" placeholder="Email Address" value="${loginDto.emailId}">
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="password"
-											tabindex="2" class="form-control" placeholder="Password">
+											tabindex="2" class="form-control" placeholder="Password" value="${loginDto.password}">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirm-password"
-											id="confirm-password" tabindex="2" class="form-control"
-											placeholder="Confirm Password">
+										<input type="password" name="confirmPassword"
+											id="confirmPassword" tabindex="2" class="form-control"
+											placeholder="Confirm Password" value="${loginDto.confirmPassword}">
 									</div>
 									<div class="form-group">
 										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit"
-													id="register-submit" tabindex="4"
-													class="form-control btn btn-register" value="Sign Up Now">
-											</div>
+											<c:choose>
+												<c:when test="${loginDto.registerFlg}">
+													<div class="col-sm-6 col-sm-offset-5">
+														<a href="<c:url value="/otslogin"/>" class="text-primary">
+														<strong>Login Now</strong>
+														</a>
+													</div>
+												</c:when>
+												<c:otherwise>
+													<div class="col-sm-6 col-sm-offset-3">
+														<input type="submit" name="register-submit"
+															id="register-submit" tabindex="4"
+															class="form-control btn btn-register" value="Sign Up Now">
+													</div>
+												</c:otherwise>
+											</c:choose>
 										</div>
 									</div>
 								</form>
@@ -212,10 +245,10 @@ footer {
 			</div>
 			<div class="col-sm-2 sidenav">
 				<div class="well">
-					<p>ADS</p>
+					<p>FutureUse</p>
 				</div>
 				<div class="well">
-					<p>ADS</p>
+					<p>FutureUse</p>
 				</div>
 			</div>
 		</div>

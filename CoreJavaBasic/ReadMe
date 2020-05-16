@@ -5,3 +5,15 @@ https://github.com/PPawar09?tab=repositories
 https://github.com/PPawar09/javaRepo
 
 prakash09pawar@gmail.com	/ Guava@2018
+
+********** Online DB **************************  Db4FreeDao
+
+/**
+ * This will connect to online DB playSofy Hosted on db4free.net:3306
+ * It can be manage by login in to 
+ * https://www.db4free.net/phpMyAdmin/db_sql.php?db=playsoft
+ * 
+ * 	Database: playsoft
+	Username: prakashnew
+	Email: prakash09pawar@gmail.com
+	password : prak1234

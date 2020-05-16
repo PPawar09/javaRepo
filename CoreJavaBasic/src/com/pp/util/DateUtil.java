@@ -268,6 +268,26 @@ public class DateUtil {
 	    return diff; 
 	}
 	
+	
+	/**
+	 * Method return number of days between two dates
+	 * as a parameter
+	 * @param startDt
+	 * @param endDt
+	 * @return
+	 */
+	public static String getCurrentSdfDate(String sdf){
+		String currDate = null;
+		
+		DateFormat f = new SimpleDateFormat(sdf);
+		Date dt = new Date();
+		currDate = f.format(dt);
+		
+		return currDate;
+	}
+	
+	
+	
 	public static void main(String args[])throws Exception{
 		String s1 = "18-09-2014"; 
 	    String s2 = "18-09-2015";

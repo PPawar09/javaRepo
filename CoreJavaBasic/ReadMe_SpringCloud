@@ -1,9 +1,41 @@
-1) Microservices training :  
+1) Microservices  :   Microservice are -> REST Service & Small Well Choosen Deployable Unit & Cloud enabled.
 
 		Reference 
 		
 			- https://www.springboottutorial.com/creating-microservices-with-spring-boot-part-1-getting-started
 			- https://www.youtube.com/watch?v=SeOpfBUAA1o&list=PLBBog2r6uMCQK3KnO2iVs66OnP-V8GiTM&index=2
 
+			POC URL for EurekaNaming Server  http://localhost:8761/ 
+			
+			POC Deploying Spring Boot Apps to AWS using Elastic Beanstalk 
+   			AWS Microservice : https://www.youtube.com/watch?v=ueKwBqobijE&t=1819s
 
-URL for EurekaNaming Server  http://localhost:8761/ 
+2) Docker : Is tool design to make it easier to create,deploy and run application by using Container.
+			Docker container are lightweight alternative to VM and it uses the host OS.
+			You don't have to pre allocate RAM in container.
+
+   Ref : Docker Tutorial for Beginners - with Java and Spring Boot :
+   		 Install Docker from https://docs.docker.com/docker-for-windows/install/
+   		 
+   		 Step 1 : verify installation command: C:\Users\ppawar2.EAD>docker --version
+									  Docker version 19.03.8, build afacb8b
+
+		 Step 2 : here we have different image of docker : https://hub.docker.com/u/in28min
+		 
+		 Step 3: Command to run the image from hub in local.
+		 		 docker run in28min/todo-rest-api-h2:1.0.0.RELEASE
+		 		 
+		 Due to Hyper-V service error cannot proceed on it
+		
+
+
+	AWS Fargate and ECS - Deploy Spring Microservices : This is not free so cannot do the POC on this.
+	https://www.youtube.com/watch?v=2oXVYxIPs88&t=3927s
+
+2) Docker Kubernetis : https://kube.academy/
+
+	https://www.youtube.com/watch?v=2oXVYxIPs88
+	https://www.youtube.com/watch?v=IDUyROEXnNA
+
+5) DevSecOps Training : in28minutes
+

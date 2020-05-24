@@ -1,0 +1,62 @@
+
+
+1) Generate a condition not working when based on several question.
+   At this point you can either force Teneo to generate a language condition, or you can wait until you save the flow and let Teneo generate it then. 
+   Let's force Teneo to generate a condition now:
+   
+   
+**** Basic operators in Language Object Conditiom   Refer https://www.teneo.ai/studio/reference/condition-syntax
+
+OR ( / )  : When conditions are combined with the OR-operator (/), at least one of them needs to match the input.
+
+AND ( & ) : Conditions that are combined with the AND-operator (&) must all match the input. The AND-operator does not require the words in the input to appear in a certain order.
+
+FOLLOWED BY ( + )  : Conditions that are combined with the FOLLOWED BY-operator (+) must all match the input, in the order stated. The operator is a good choice for word combinations whose sense would shift if the word order were rearranged.
+
+DIRECTLY FOLLOWED BY ( >> )
+Conditions combined with the DIRECTLY FOLLOWED BY-operator (>>) must all match the input, in the order stated. And there may not come any words between the matches.
+
+NOT DIRECTLY FOLLOWED BY ( !>>) : When two conditions are combined with the NOT DIRECTLY FOLLOWED BY-operator (!>>), the left side condition must match the user input, and the right side condition must NOT match the words immediately following the first match. The right side condition does not have to match anything in the input, it's merely imposing a restriction on the left side condition.
+
+NOT (!) : The NOT-operator (!) takes only one condition, and states that whatever is specified in that condition must not match the user input.
+
+COMPOUND ( | ) : The COMPOUND-operator (|) allows compound words to be written in a variety of ways: as one word, with a hypen or with a blank. The COMPOUND-operator can only be used to combine atomic word conditions. This means that a condition like %LANUAGE_OBJECT|%LANGUAGE_OBJECT is syntactically wrong.
+
+Extendend AND-operators  
+
+	- Same Match Opr (&=)
+	- Different Match oper (&^) : For example, when using the SAME MATCH-operator (&=) the conditions must have been applied to the exact same part of the input, whereas for the DIFFERENT MATCH-operator (&^), the conditions must have been applied to different parts of the input.
+	
+	- BIGGER MATCH ( &>)
+	- SMALLER MATCH ( &< )
+	- OVERLAP MATCH ( &~ )
+	- NOT SAME MATCH ( !&= )
+	- Limit unused words and MAYBE (~)
+	
+Optional Match option ( :O) : 
+
+Position option	(:<sentence_position>) 
+
+Exact option  (:E)
+
+Longest Match option ( :L) 
+
+
+****** Language Object Reference  Elements of a language object name  Refer  https://www.teneo.ai/studio/reference/language-object-reference
+
+When following the naming convention, a language object name has these elements: 
+
+	1) A mandatory kernel name (e.g. DOG)
+
+	2) An optional suffix specifying part of speech (applicable only for the types LEX, MUL and SYN):
+
+		ADJ (adjective)
+		ADV (adverb)
+		FW (function word such as preposition and particle)
+		NN (noun)
+		VB (verb)
+		On the SYN and MIX levels the tag may also be a combination of two parts of speech: ADJV for combined adjectives and adverbs, NNVB for combined nouns and verbs etc.
+
+	3) A mandatory suffix specifying type (e.g. LEX. See the list below).
+
+

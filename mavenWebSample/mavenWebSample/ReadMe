@@ -2,3 +2,12 @@
 
 
 http://localhost:8080/mavenWebSample/togglz
+
+http://localhost:8080/mavenWebSample/togglz/index
+
+
+********** TogglZ Research *****************
+
+> what service to use for user role and display togglz console.
+> which project to use for global Feature.
+> is it good for cluster env

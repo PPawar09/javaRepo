@@ -1,0 +1,148 @@
+**** Software Required  ****
+
+> Install Latest Visual Code Studio : Is a editor for coding TS
+> Install Latest Node JS (https://nodejs.org/ for additional instructions)
+	- install the latest version available.
+	- verify the install from cmd by C:\Users\ppawar2.EAD>node -v (This will give you version of node js)
+	- along with node js npm will also installed.
+	- verify npm install from cmd by C:\Users\ppawar2.EAD>npm -v (This will give version of nmp)
+	- What is npm : (https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/)
+		"Node Package Manager, is two things: first and foremost, it is an online repository for the publishing of 
+		open-source Node.js projects; second, it is a command-line utility for interacting with said repository that
+		aids in package installation, version management, and dependency management."
+		
+> Install Agular CLI  (https://www.youtube.com/watch?v=Akh2aWZ9-KM) : "ng The Angular CLI makes it easy to create an application that already works, right out of the box. It already follows our best practices!"
+	- install CLI from cmd by  C:\Users\ppawar2.EAD>npm install -g @angular/cli
+    - ng -v : to verify angular CLI installed or not
+> Angular CLI is a tool required to create Angular Project boiler plate code, deploy App etc.
+
+****************** Commands to angular ************************
+
+to uninstall and ng install  new version
+
+npm uninstall -g @angular/cli
+npm cache clean
+npm install -g @angular/cli@latest
+
+
+> Command to install Angular CLI.
+
+  $npm install -g @angular/cli       // -g is for global installation. this will install latest version of CLI.
+
+  $ ng -v : to verify angular CLI installed or not
+
+> ng new <projectName>        : Command to create new project with boiler plate code
+> ng new HelloFirstAngular    : This will create the project structure of Angular project.
+C:\Users\prakash.pawar\AngularWorkspace>ng new HelloFirstAngular
+
+> \AngularWorkspace\HelloFirstAngular>ng serve   : This is will and build app and load on web server.
+
+> Once server start verify url : http://localhost:4200/
+
+> to Stop Server : to stop the server ctrl + c   Y enter.
+
+> Generating Component Using Angular CLI
+  
+  $ ng g c <nameOfComponent>   // g is generate c is component.
+   
+
+	C:\Users\prakash.pawar\CXworkspace\Dev\BR_Vehilce_Endt\BR_Vehicle_Endorsement\bristol-west\src\app\components\endtvehicle>ng g c vehicle-detail
+	
+		> This will create folder vehicle-detail inside endtvehicle.
+		> This will create 4 file with name as 
+			vehicle-detail.component.html
+			vehicle-detail.component.ts
+			vehicle-detail.component.scss
+			vehicle-detail.component.spec.ts
+			
+   $ ng generate component document-list --flat  [Commant to generate component without creating directory]
+   
+   $ ng generate component --spec=false component-name [Commant to generate component without creating spec file]
+
+
+
+  
+> Generating Service Using Angular CLI
+
+  $ ng g s <nameOfService>   // g is generate s is service.
+  
+> Generate Directive using CLI
+
+  $ ng g d <nameOfService>   // d is for directives.
+  $ ng g d input-format
+  
+  
+> to install all the package.json dependency.
+
+  \helloWorld>npm install  // this will install all dependency per package.json of project.
+  
+  
+**************** Command to TypeScript *********************
+
+  $npm install -g typescript
+  
+  $tsc --version   // this is to verify the installed typescript compiler tsc.
+  
+  $tsc <nameofTSfile>   // this will transpile ts into js.
+  
+  $node <nameofTSfile>  // this will run the TS code.
+  
+  D:\AngularJsRepo\TypeScriptPoc> tsc fundamental.ts | node fundamental.js    // compile and run at same time.
+  
+**************** Adding Bootstrap to Ang Project 
+
+ $npm install bootstrap --save   // this save flag it does download bootstrap module and store in node module folder. 
+									Same time it also add bootstarp dependency in package.json
+									
+***************  Adding glyphicons
+
+$npm install --save glyphicons
+
+$npm install --save font-awesome angular-font-awesome
+ 
+
+******** Imp File in Angular ***************
+
+app/app.module.ts
+
+	Defines AppModule, the root module that tells Angular how to assemble the application. Right now it declares only the AppComponent. 
+	Soon there will be more components to declare.
+
+assets/*
+
+	A folder where you can put images and anything else to be copied wholesale when you build your application.
+	
+environments/*
+
+	This folder contains one file for each of your destination environments, each exporting simple configuration variables to use in your application. 
+	The files are replaced on-the-fly when you build your app. You might use a different API endpoint for development than you do for production or maybe 
+	different analytics tokens. You might even use some mock services. Either way, the CLI has you covered.
+
+browserslist
+
+	A configuration file to share target browsers between different front-end tools.
+	
+index.html
+
+	The main HTML page that is served when someone visits your site. Most of the time you'll never need to edit it. 
+	The CLI automatically adds all js and css files when building your app so you never need to add any <script> or <link> tags here manually.
+	
+main.ts
+
+	The main entry point for your app. Compiles the application with the JIT compiler and bootstraps the application's root module (AppModule) to run in the browser. 
+	You can also use the AOT compiler without changing any code by appending the--aot flag to the ng build and ng serve commands
+
+********
+********
+
+C:\Users\prakash.pawar>cd..
+
+C:\Users>cd..
+
+C:\>cd tortSvnRepo
+
+C:\tortSvnRepo>cd bwComAngular
+
+C:\tortSvnRepo\bwComAngular>ng serve
+
+to stop the server ctrl + c   Y enter.

@@ -1,0 +1,18 @@
+Refe : https://guides.github.com/introduction/git-handbook/
+
+************** Handy Command ***************
+
+
+# Commmand to clone/download a repository on GitHub.com to our machine
+git clone https://github.com/me/repo.git
+
+git status   : shows the status of changes as untracked, modified, or staged.
+
+git branch   : shows the branches being worked on locally.
+
+git pull     : (equal to fecth and merge )updates the local line of development with updates from its remote counterpart. 
+				Developers use this command if a teammate has made commits to a branch on a remote, and they would like to reflect 
+				those changes in their local environment.
+				
+
+git checkout my-branch  : switch to that branch (line of development)

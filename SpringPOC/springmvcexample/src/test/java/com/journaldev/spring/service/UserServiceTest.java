@@ -24,16 +24,12 @@ public class UserServiceTest {
 	UserService userService;
 	
 	@Test
-	public void testFindTheGreatestFromAllData() {
+	public void testGetTaskByUserId() {
 		
 		List<UserTaskRecord> utrList = null;
 		
 		when(userDaoImplMock.getTaskById("123")).thenReturn(utrList);
 		assertEquals(24, userService.getTaskByUserId("123"));
 	}
-	
-
-	
-	
 
 }

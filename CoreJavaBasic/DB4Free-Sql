@@ -1,3 +1,5 @@
+Some Rerence : http://www.sqlcourse2.com/joins.html
+
 CREATE TABLE users(
     username VARCHAR(45) NOT NULL,
     password VARCHAR(45) NULL,

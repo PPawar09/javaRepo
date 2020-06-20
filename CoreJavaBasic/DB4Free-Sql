@@ -1,5 +1,10 @@
 Some Rerence : http://www.sqlcourse2.com/joins.html
 
+<property name="url" value="jdbc:mysql://db4free.net:3306/playsoft" />
+<property name="username" value="prakashnew" />
+<property name="password" value="prak1234" />
+
+
 CREATE TABLE users(
     username VARCHAR(45) NOT NULL,
     password VARCHAR(45) NULL,

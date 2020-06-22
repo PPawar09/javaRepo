@@ -1,5 +1,11 @@
 Ref : https://github.com/in28minutes/MavenIn28Minutes/blob/master/README.md
 
+https://www.youtube.com/watch?v=0CFWeVgzsqY&t=3811s
+
+http://maven.apache.org/guides/introduction/introduction-to-the-pom.html
+
+https://mkyong.com/maven/maven-how-to-create-a-multi-module-project/
+
 1) Build LifeCycle/ Build Phase in Maven are :-
 
 		- Validate  : to make sure pom file is fine.
@@ -46,6 +52,20 @@ Ref : https://github.com/in28minutes/MavenIn28Minutes/blob/master/README.md
 			<module>data</module>
 			<module>business</module>
 		  </modules>
+
+3) <parent> : 
+			Yes, maven reads the parent POM from your local repository (or proxies like nexus) and creates an 'effective POM' 
+			by merging the information from parent and module POM.
+			
+4) What is “pom” packaging in maven?
+	
+	pom packaging is simply a specification that states the primary artifact is not a war or jar, but the pom.xml itself.
+	Often it is used in conjunction with "modules" which are typically contained in sub-directories of the project in question; however, 
+	it may also be used in certain scenarios where no primary binary was meant to be built, all the other important artifacts have been 
+	declared as secondary artifacts
+	
+	Think of a "documentation" project, the primary artifact might be a PDF, but it's already built, and the work to declare it as a 
+	secondary artifact might be desired over the configuration to tell maven how to build a PDF that doesn't need compiled.
 		  
 		
 		 

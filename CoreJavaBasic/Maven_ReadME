@@ -17,3 +17,80 @@ In summary, what you need to do is:
 
 Note: Maven uses Java when executing, so you need Java installed too (and the JAVA_HOME environment variable set as explained above). 
 Maven 3.0.5 needs a Java version 1.5 or later. I use Maven 3.3.3 with Java 8 (u45).
+
+*********************
+
+Ref : https://github.com/in28minutes/MavenIn28Minutes/blob/master/README.md
+
+https://www.youtube.com/watch?v=0CFWeVgzsqY&t=3811s
+
+http://maven.apache.org/guides/introduction/introduction-to-the-pom.html
+
+https://mkyong.com/maven/maven-how-to-create-a-multi-module-project/
+
+1) Build LifeCycle/ Build Phase in Maven are :-
+
+		- Validate  : to make sure pom file is fine.
+		- Compile   : Src is compiling.
+		- Test		: Run the Junit test.
+		- Package
+		- Integration
+		- Verify
+		- Install / Deploy
+		
+
+		* Example Run the Command mvn test (here sequence Validate, Compile and Test)
+
+		* If we use Install it will run all the steps as above.
+		
+		* We can attach plugin to do build lifecycle.
+		
+		* There many pluggin define in Super or Parent POM.xml
+		
+2) POM Structure 
+
+
+		- Name     : Define the name of project
+		- Version  : version of project.
+		- Packaging  : Artifact we need like jar war
+		- Dependencies : Need of our project defined here.
+		- Plugins : like deploy webapp to tomcat server. so there is a plugin for it like for other stuff.
+
+3) Multi Module Maven Example
+
+		* There are three project 
+				- business layer which has sub project
+				- data layer  which has sub project
+				- model layer which has sub project
+				
+			Model layer is used by business and data layer.
+			Data layer depends on Model. 
+			Business layer depends on data and Model.
+			
+		* Entire configuration start with parent project . thats the first pom
+		  here packaging is pom (not jar or ect) it mean it is parent pom for other pom defined in 
+		  <modules>
+			<module>model</module>
+			<module>data</module>
+			<module>business</module>
+		  </modules>
+
+3) <parent> : 
+			Yes, maven reads the parent POM from your local repository (or proxies like nexus) and creates an 'effective POM' 
+			by merging the information from parent and module POM.
+			
+			So parter node is used to have the common the dependency in parent pom so that every one can inherit it.
+			Module node in is the one having pom for respective project that my generate some jar required.
+			
+4) What is “pom” packaging in maven?
+	
+	pom packaging is simply a specification that states the primary artifact is not a war or jar, but the pom.xml itself.
+	Often it is used in conjunction with "modules" which are typically contained in sub-directories of the project in question; however, 
+	it may also be used in certain scenarios where no primary binary was meant to be built, all the other important artifacts have been 
+	declared as secondary artifacts
+	
+	Think of a "documentation" project, the primary artifact might be a PDF, but it's already built, and the work to declare it as a 
+	secondary artifact might be desired over the configuration to tell maven how to build a PDF that doesn't need compiled.
+		  
+		
+		

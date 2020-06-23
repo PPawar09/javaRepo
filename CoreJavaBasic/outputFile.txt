@@ -1,0 +1,2 @@
+This is BufferedWriter.
+name      123  0032120200623

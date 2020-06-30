@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 
+import com.pp.corejava.Student.Department;
+
 /**
  * This is explain the use of Comparator Interface and its implementation using collection of 
  * Custom object Student.
@@ -21,7 +23,15 @@ public class SortByComparator {
 		al.add(new Student(105,"Jai",21));  
 
 		System.out.println("Sorting by Name...");  
-		Collections.sort(al,new NameComparator());  
+		Collections.sort(al,new NameComparator()); 
+		
+		Student std = new Student(101,"Vijay",23);
+		
+		Student.Department dep = std.new Department();
+		
+		dep.setBranch("TTTTT");
+		
+		System.out.println("********" + dep.getBranch());
 
 		Iterator itr=al.iterator();  
 		while(itr.hasNext()){  

@@ -1,6 +1,5 @@
 package com.pp.dspattern;
 
-import com.pp.corejava.SingleTon;
 
 /**
  * 	> Singleton design pattern is one of the most common patterns you will see in Java applications and 

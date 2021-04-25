@@ -5,11 +5,12 @@ Description : Maven is most popular project and dependency managment tool for ja
 To install Maven on your own system (computer), go to the Maven download page and follow the instructions there. 
 In summary, what you need to do is:
 
+	> Add variable under system variable section.
 	> Set the JAVA_HOME environment variable to point to a valid Java SDK (e.g. Java 8).
 		Download and unzip Maven.
+	> Set java path as well till bin in path variable of system.
 	> Set the M2_HOME environment variable to point to the directory you unzipped Maven to.
-	> Set the M2 environment variable to point to M2_HOME/bin (%M2_HOME%\bin on Windows, $M2_HOME/bin on unix).
-	> Add M2 to the PATH environment variable (%M2% on Windows, $M2 on unix).
+	> Set the M2 path environment variable to point to M2_HOME/bin (%M2_HOME%\bin on Windows, $M2_HOME/bin on unix).
 
 	Open a command prompt and type 'mvn -version' (without quotes) and press enter.
 	After typing in the mvn -version command you should be able to see Maven execute, 
@@ -17,6 +18,16 @@ In summary, what you need to do is:
 
 Note: Maven uses Java when executing, so you need Java installed too (and the JAVA_HOME environment variable set as explained above). 
 Maven 3.0.5 needs a Java version 1.5 or later. I use Maven 3.3.3 with Java 8 (u45).
+
+
+Can you tried downloading maven from google. It is ZIP file and extract it on your C drive.
+In my case it is C:\Maven\apache-maven-3.6.3
+1) Download maven and extract it on C Drive
+2. Set environment variable M2_HOME - C:\Maven\apache-maven-3.6.3
+and add C:\Maven\apache-maven-3.6.3\bin in PATH - environemnt variable
+3) Go to command prompt and go to folder where your POM.xml is there
+it will be workspace path
+4) run mvn clean install
 
 *********************
 

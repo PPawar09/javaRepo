@@ -1,6 +1,13 @@
 Description : Maven is most popular project and dependency managment tool for java application. 
 			  It has lot of command and option to help us during our application developemnt.
 			  
+Maven Command 
+
+diretory of app having pom.xml/> mvn -Dmaven.javadoc.skip=true clean install -U	
+
+diretory of app having pom.xml/> mvn clean install  (mostly used)			  
+
+			  
 ***** Installing Maven
 To install Maven on your own system (computer), go to the Maven download page and follow the instructions there. 
 In summary, what you need to do is:

@@ -1,0 +1,26 @@
+https://www.journaldev.com/2433/spring-mvc-tutorial
+
+*********** Spring Annotation Document *********
+
+1)  @Component annotation is added to the class, so that when Spring framework will scan for the components, this class will be treated as component. 
+	@Component annotation can be applied only to the class and it’s retention policy is Runtime. If you are not not familiar with Annotations retention policy.
+	
+2)  @Autowired annotation is used to let Spring know that autowiring is required. This can be applied to field, constructor and methods. 
+    This annotation allows us to implement constructor-based, field-based or method-based dependency injection in our components.
+   
+3)  @Configuration annotation is used to let Spring know that it’s a Configuration class.
+
+4)  @ComponentScan annotation is used with @Configuration annotation to specify the packages to look for Component classes.
+
+5)  @Bean annotation is used to let Spring framework know that this method should be used to get the bean implementation to inject in Component classes.
+
+6)  @Component vs @Repository and @Service in Spring : We can use @Component across the application to mark the beans as Spring's managed components. 
+	Spring will only pick up and register beans with @Component, and doesn't look for @Service and @Repository in general.
+	They are registered in ApplicationContext because they are annotated with @Component
+	@Service and @Repository are special cases of @Component. They are technically the same, but we use them for the different purposes.
+	@Service annotates classes at the service layer.@Service to indicate that they're holding the business logic. Besides being used in the service layer, 
+	there isn't any other special use for this annotation.
+	@Repository annotates classes at the persistence layer, which will act as a database repository.
+	
+7) @Controller is a stereotype for the presentation layer (spring-MVC).
+

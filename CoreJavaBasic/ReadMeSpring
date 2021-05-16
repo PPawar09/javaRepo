@@ -22,5 +22,9 @@ https://www.journaldev.com/2433/spring-mvc-tutorial
 	there isn't any other special use for this annotation.
 	@Repository annotates classes at the persistence layer, which will act as a database repository.
 	
-7) @Controller is a stereotype for the presentation layer (spring-MVC).
+7) @Controller is a stereotype for the presentation layer (spring-MVC).The @Controller is a common annotation that is used to mark a class as Spring MVC Controller 
+	while @RestController is a special controller used in RESTFul web services and the equivalent of @Controller + @ResponseBody.
+
+8) @RestController is a specialized version of the controller. It includes the @Controller and @ResponseBody annotations,
+   and as a result, simplifies the controller implementation:
 

@@ -1,5 +1,21 @@
 https://www.journaldev.com/2433/spring-mvc-tutorial
 
+********** Topic with example *****************
+
+1) DI, IOC and AOP
+
+// https://www.springboottutorial.com/creating-rest-service-with-spring-boot
+2) RestFull Student Service (When Spring load the service it will ask for default username is: user and the default password will be printed in the console at the time when your Spring Boot project is starting.)
+
+		-  Run RestStudentServiceMain
+		-  test endpoint url http://localhost:8080/students/Student1/courses/Course1
+		-                    http://localhost:8080/students/Student2/courses
+		- 
+
+
+
+
+
 *********** Spring Annotation Document *********
 
 1)  @Component annotation is added to the class, so that when Spring framework will scan for the components, this class will be treated as component. 
@@ -8,7 +24,7 @@ https://www.journaldev.com/2433/spring-mvc-tutorial
 2)  @Autowired annotation is used to let Spring know that autowiring is required. This can be applied to field, constructor and methods. 
     This annotation allows us to implement constructor-based, field-based or method-based dependency injection in our components.
    
-3)  @Configuration annotation is used to let Spring know that it’s a Configuration class.
+3)  @Configuration annotation is used to let Spring know that it’s a Configuration class.We use @Configuration so that Spring creates a Spring bean in the application context.
 
 4)  @ComponentScan annotation is used with @Configuration annotation to specify the packages to look for Component classes.
 
@@ -27,4 +43,6 @@ https://www.journaldev.com/2433/spring-mvc-tutorial
 
 8) @RestController is a specialized version of the controller. It includes the @Controller and @ResponseBody annotations,
    and as a result, simplifies the controller implementation:
+   
+9) @ConfigurationProperties annotation allows us to map the resource files such as properties or YAML files to Java Bean object.
 

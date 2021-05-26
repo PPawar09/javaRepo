@@ -1,12 +1,29 @@
 Ref : https://www.javatpoint.com/java-lambda-expressions
 
+Why Java 8, Main ajenda behind it.
+
+	> Significant reason is to introduce consiseness in the code.
+	> Java brings in Functional Programming which is enabled by Lambda expression(powerfull tool to create concise code)
+	> python and scala use same to do very less LOC.
+	> Java upgrade itself from only OOPS language to some concept of FP to create concise code base.
+
 ***Java 8 provides following features for Java Programming:
 
-	- Lambda expressions,
-    - Method references,
-	- Functional interfaces,
-	- Stream API,
-	- Default methods,
+	> Lambda expressions (is an anonymous function without name, return type and access modifier and having one -> symbole)
+    > Method references : is replacement of lambda expression. It is used to refer method of Functional Interface to an existing method.
+    					  Mainly it is used for code reusability.
+    			- :: is used for method reference of Functional interface abstract method.
+    			- when ever we have existing implementation of Abstract method of Functional interface then we can go 
+    			  for method reference instead of lambda expression. example
+	> Functional interfaces, (are those interface which has only one abstract method ex Runnable Comparable)
+			- functional interface are used to provide reference to lambda expression. like BiConsumer in our example
+			- it can have multiple Static and default method.
+			
+	> Stream API,
+	> Default methods : is a way for adding new method to interface without effecting the implementing classes.
+	  		Hence with the new feature java people defended many compile time error that may occur due to unimplemented method of interface.
+	  		- How default method in interface cope up with Diamond problem.
+	  		  
 	- Base64 Encode Decode,
 	- Static methods in interface,
 	- Optional class,

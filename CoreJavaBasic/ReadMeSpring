@@ -6,14 +6,36 @@ https://www.journaldev.com/2433/spring-mvc-tutorial
 
 // https://www.springboottutorial.com/creating-rest-service-with-spring-boot
 2) RestFull Student Service (When Spring load the service it will ask for default username is: user and the default password will be printed in the console at the time when your Spring Boot project is starting.)
+   to test from post man try basic auth and enter above credential.
 
 		-  Run RestStudentServiceMain
 		-  test endpoint url http://localhost:8080/students/Student1/courses/Course1
 		-                    http://localhost:8080/students/Student2/courses
-		- 
+		- 					 http://localhost:8080/actuator/health
+		- 					 http://localhost:8080/welcome
+		- 					 http://localhost:8080/dynamic-configuration
+		
+3) Actuator is important tool in Spring Boot.
 
 
+*********** Topic In Path **********************
 
+https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html
+1) What Is an Actuator?
+
+	Actuator endpoints let you monitor and interact with your application. Spring Boot includes a number of built-in endpoints and lets you add your own. For example, 
+	the health endpoint provides basic application health information.
+
+	Actuator brings production-ready features to our application.
+	Monitoring our app, gathering metrics, understanding traffic, or the state of our database become trivial with this dependency.
+	
+	The main benefit of this library is that we can get production-grade tools without having to actually implement these features ourselves.
+	Actuator is mainly used to expose operational information about the running application — health, metrics, info, dump, env, etc. It uses HTTP endpoints or 
+	JMX beans to enable us to interact with it.
+	
+	- http://localhost:8080/actuator        : here you will various endpoint on actuator.
+	- http://localhost:8080/actuator/health
+	- http://localhost:8080/actuator/info
 
 
 *********** Spring Annotation Document *********
@@ -42,7 +64,10 @@ https://www.journaldev.com/2433/spring-mvc-tutorial
 	while @RestController is a special controller used in RESTFul web services and the equivalent of @Controller + @ResponseBody.
 
 8) @RestController is a specialized version of the controller. It includes the @Controller and @ResponseBody annotations,
-   and as a result, simplifies the controller implementation:
+   and as a result, simplifies the controller implementation and it avoids the need of prefixing every method with @ResponseBody.
    
 9) @ConfigurationProperties annotation allows us to map the resource files such as properties or YAML files to Java Bean object.
+
+10) @RequestBody and @ResponseBody annotations are used to convert the body of the HTTP request and response with java class objects. 
+    Both these annotations will use registered HTTP message converters in the process of converting/mapping HTTP request/response body with java objects.
 

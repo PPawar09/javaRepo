@@ -15,3 +15,41 @@
 8) Reflection in Java
 
 9) SOLID Principle in Java.
+
+
+**********************
+
+Ref : https://www.quora.com/How-do-I-prepare-for-a-position-of-Java-architect
+
+Interview Preparation for a Java Architect role
+
+The Java Architect role is very important in enterprise application development to meet client’s requirements. You need multiple skills to work on this role. 
+The interview preparation requires you to do some research about your employer’s job description, project, and technologies.
+
+Step 1: Understand about Java Architect
+
+Please read these articles:
+
+Ganesh P's answer to How can I become a Java technical architect?
+Ganesh P's answer to How do I become a software architect from Senior Java developer role?
+Step 2: Understand about your new employer’s job description
+
+Expectation from your new employer
+
+Frameworks
+Technologies
+Application Servers
+Web Servers
+Domain Experience
+Team Management
+Step 3: Prepare for your interview
+
+List down the technologies you have used in your projects
+List down the new technologies you need more attention
+Do home work about your project’s architecture by considering all tiers
+Read more about Java Patterns, Java EE Patterns, SOA
+UML Diagrams
+Step 3: Answering in interview
+
+Make a small presentation about your current Java Architecture skills to impress your interviewer. The presentation should have architecture skills so far you used and architecture 
+skills required for your employer. By this way you can drive your interviewer to ask questions from your PPT instead of other questions

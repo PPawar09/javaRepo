@@ -16,3 +16,12 @@ git pull     : (equal to fecth and merge )updates the local line of development 
 				
 
 git checkout my-branch  : switch to that branch (line of development)
+
+// after above comman your current branch is my-branch
+// Now comman to merge master into current branch.
+
+git merge master // this will merge master to your current and you can commit and push this to repo
+
+// command to stash you code.
+
+git stash
